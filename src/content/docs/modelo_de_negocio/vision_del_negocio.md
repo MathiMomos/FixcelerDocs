@@ -3,254 +3,200 @@ title: Vision de Negocio
 description: Descripción detallada del vision de negocio de Fixceler.
 ---
 
-## 1. Nombre del modulo
+### **1. Nombre del Sistema**
 
-Módulo de IA para sistema intermediario de reparaciones domésticas
+Plataforma de servicios de reparación a domicilio "Fixceler".
 
-## 2. Objetivos
+### **2. Objetivos**
 
-- Interpretar de forma inteligente las solicitudes de los clientes, incluyendo el tipo de servicio, texto libre y ubicación, para comprender sus necesidades con precisión
-- Evaluar y clasificar a los reparadores disponibles utilizando múltiples criterios relevantes como experiencia, cercanía geográfica, disponibilidad y reputación
-- Sugerir los mejores candidatos posibles devolviendo una lista ordenada y personalizada según la compatibilidad con la solicitud del cliente
-- Integrarse eficientemente con la aplicación existente mediante una API, permitiendo su uso automático y escalable dentro del flujo actual del sistema
+- Automatizar el proceso de solicitud y asignación de servicios, eliminando la dependencia de llamadas telefónicas y hojas de Excel.
+- Centralizar la información de clientes, reparadores y servicios en una única base de datos para mejorar la gestión y la toma de decisiones.
+- Proveer a los clientes una experiencia transparente y moderna, con capacidad de seguimiento en tiempo real y un sistema de calificación.
+- Optimizar la asignación de reparadores a través de un sistema inteligente que considere la especialidad, cercanía y disponibilidad.
 
-## 3. Alcance o campo de acción
+### **3. Alcance o campo de acción**
 
-El módulo abarcará solo el área de búsqueda de reparadores de la aplicación, ofreciendo una experiencia alternativa y disruptiva a la búsqueda tradicional ya implementada por la aplicación
+El sistema a desarrollar abarcará el ciclo de vida completo de un servicio de reparación, desde que el cliente realiza la solicitud en la plataforma, pasando por la asignación del reparador, la ejecución del trabajo, la confirmación del costo y la calificación final.
 
-## 4. Referencias
+### **4. Referencias**
 
-Entrevistas
+- **Entrevistas:**
+    - Líder del Negocio (para entender la operación manual actual).
+    - Potenciales usuarios (Clientes y Reparadores) para validar la propuesta de valor.
+- **Documentos:**
+    - Análisis del proceso manual y de los registros en hojas de cálculo existentes.
+    - Modelo de Negocio de Fixceler.
 
-- Líder del Startup
-- Diseñador principal de la aplicación
-- Encargada del área de la funcionalidad de búsqueda de reparadores
+### **5. Posicionamiento del sistema**
 
-Documentos
+#### **5.1. Objeto de estudio**
+Fixceler es una empresa de intermediación de servicios de reparación que opera en Lima, Perú. Actualmente, funciona de manera manual, conectando clientes con reparadores domésticos para servicios como plomería, electricidad, cerrajería, entre otros, gestionando su operación a través de llamadas y hojas de cálculo.
 
-- Documentación de la primera versión de la aplicación
-- Modelos anteriores (Casos de uso, modelos conceptuales de bases de datos, diagramas informales)
+Sus principales competencias en el mercado local son plataformas como: MaestroADomicilio y Técnico a Domicilio Lima.
 
-## 5. Posicionamiento del módulo
+#### **5.2. Oportunidad de negocio**
+La digitalización completa del proceso representa una oportunidad de negocio fundamental. Permite a Fixceler escalar sus operaciones, reducir drásticamente los costos y tiempos de gestión, y ofrecer una experiencia de usuario muy superior a la de los competidores informales. La implementación de IA en la asignación posicionará a la empresa como un líder tecnológico en un sector tradicionalmente poco automatizado.
 
-### 5.1. Objeto de estudio
+#### **5.3. Declaración del problema a resolver**
 
-Es una startup que opera en Latinoamérica y conecta clientes con reparadores domésticos como plomeros, electricistas, cerrajeros, entre otros. Funciona como una plataforma web sencilla tipo directorio con funciones básicas.
-
-### 5.2. Oportunidad de negocio
-
-La implementación de un módulo de IA en la aplicación, representa una oportunidad de negocio disruptiva al posicionar a la empresa como pionera en la aplicación de inteligencia artificial para el emparejamiento inteligente de servicios técnicos. Esta innovación no solo mejorara la eficiencia y escalabilidad del modelo actual, sino que abre nuevas líneas de ingresos (como nuevas formas de monetizar la aplicación a través de planes), facilita la expansión geográfica y sectorial, y crea un efecto red que fortalece la fidelización y barreras de entrada para la competencia. Además, al tratarse de una solución inédita en su mercado, genera alta visibilidad mediática y puede atraer alianzas estratégicas clave, consolidando a Fixceler como líder tecnológico en un sector tradicionalmente informal y poco automatizado.
-
-### 5.3. Declaración de la necesidad a resolver:
-
-La necesidad es: La búsqueda de reparadores actual es suficiente en lo que hace pero el startup busca implementar una nueva solución que sea disruptiva y alineada con las tecnologías de IA actuales. Esta necesidad nace del deseo de ser parte de los pioneros en integrar la inteligencia artificial de forma eficiente en una aplicación ya existente
-
-Afecta: Directamente a la startup
-
-El impacto está: En los clientes que buscan reparadores domésticos
-
-Una solución adecuada sería: Un módulo que se pueda integrar fácilmente al sistema ya existente
-
-| La necesidad es | La búsqueda de reparadores actual es suficiente en lo que hace pero el startup busca implementar una nueva solución que sea disruptiva y alineada con las tecnologías de IA actuales. Esta necesidad nace del deseo de ser parte de los pioneros en integrar la inteligencia artificial de forma eficiente en una aplicación ya existente |
+|  |  |
 | --- | --- |
-| Afecta | Directamente a la startup |
-| El impacto está | En los clientes que buscan reparadores domésticos |
-| Una solución adecuada sería | Un módulo que se pueda integrar fácilmente al sistema ya existente |
+| **El problema es** | El proceso de gestión de servicios actual es manual, lento, propenso a errores y no ofrece trazabilidad ni confianza al cliente. |
+| **Afecta** | A la eficiencia operativa de la empresa y a la satisfacción de clientes y reparadores. |
+| **El impacto está** | En la pérdida de clientes por demoras, la dificultad para gestionar un volumen creciente de servicios y la imposibilidad de medir la calidad del trabajo. |
+| **Una solución adecuada sería** | Una plataforma móvil integral que automatice y centralice toda la operación. |
 
-### 5.4. Declaración del posicionamiento del producto
+#### **5.4. Declaración del posicionamiento del producto**
 
-Para: Para el líder de la startup y el diseñador principal de la aplicación
-
-Quiénes: Necesitan ofrecer una experiencia nueva y fresca sobre su aplicación innovadora
-
-Producto: Módulo de IA que implemente la búsqueda de reparadores por parte de los clientes a través del lenguaje natural
-
-Que:
-
-Sera capaz de:
-
-- Interpretar de forma inteligente las solicitudes de los clientes
-- Evaluar y clasificar a los reparadores disponibles utilizando múltiples criterios
-- Sugerir los mejores candidatos posibles devolviendo una lista ordenada y personalizada según la solicitud del cliente
-- Integrarse con la aplicación existente mediante una API
-
-A diferencia de: Funcionalidad tradicional de búsqueda de trabajadores
-
-Nuestro producto: Sera capaz de realizar la búsqueda de reparadores por parte de los clientes a través del lenguaje natural
-
-| Para | Para el líder de la startup y el diseñador principal de la aplicación |
+|  |  |
 | --- | --- |
-| Quiénes | Necesitan ofrecer una experiencia nueva y fresca sobre su aplicación innovadora |
-| Producto | Módulo de IA que implemente la búsqueda de reparadores por parte de los clientes a través del lenguaje natural |
-| Que | Sera capaz de: |
-| • Interpretar de forma inteligente las solicitudes de los clientes |     |
-| • Evaluar y clasificar a los reparadores disponibles utilizando múltiples criterios |     |
-| • Sugerir los mejores candidatos posibles devolviendo una lista ordenada y personalizada según la solicitud del cliente |     |
-| • Integrarse con la aplicación existente mediante una API |     |
-| A diferencia de | Funcionalidad tradicional de búsqueda de trabajadores |
-| Nuestro producto | Sera capaz de realizar la búsqueda de reparadores por parte de los clientes a través del lenguaje natural |
+| **Para** | El equipo de operaciones y la gerencia de Fixceler. |
+| **Quiénes** | Necesitan reemplazar el ineficiente proceso manual para poder escalar el negocio y mejorar la calidad del servicio. |
+| **El producto** | La plataforma "Fixceler". |
+| **Que** | Será capaz de: automatizar la solicitud de servicios, optimizar la asignación de reparadores, permitir el seguimiento en tiempo real y gestionar las calificaciones. |
+| **A diferencia de** | El sistema actual basado en llamadas y hojas de Excel. |
+| **Nuestro producto** | Ofrecerá un ecosistema digital integrado, eficiente y transparente para todas las partes involucradas. |
 
-## 6. Descripción de los usuarios del sistema
+### **6. Descripción de los usuarios del sistema**
 
-### 6.1. Usuario / Demografía del mercado
+#### **6.1. Usuario / Demografía del mercado**
+El **Cliente** de la aplicación es una persona que busca resolver de forma rápida y confiable un problema técnico en su hogar o negocio. Valora la comodidad y espera respuestas inmediatas con profesionales calificados.
 
-El primer tipo usuario (cliente) de la aplicación es una persona que busca resolver de forma rápida, confiable y sin complicaciones algún problema técnico en su hogar, negocio o propiedad. Valora la comodidad de acceder a servicios desde el celular y espera respuestas inmediatas con profesionales calificados.
+El **Reparador** es un profesional técnico que busca aumentar su flujo de trabajo accediendo a más clientes mediante una plataforma confiable y fácil de usar.
 
-El segundo tipo de usuario (reparador) de la aplicación es un profesional técnico independiente o parte de un pequeño equipo que busca aumentar su flujo de trabajo accediendo a más clientes mediante una plataforma confiable y fácil de usar.
+#### **6.2. Perfiles de Usuario**
 
-### 6.2. Perfiles de Usuario
-
-| Tipo de usuario | Líder de la startup |
+| Tipo de usuario | **Asistente de Operaciones** |
 | --- | --- |
-| Responsabilidades clave | Responsable de dirigir todas las decisiones importantes sobre la aplicación |
-| Background Técnico | Programador, Arquitecto de Software, Experiencia con emprendimientos, etc. |
-| Entregables | Un módulo de IA que se pueda integrar fácilmente a la aplicación |
-| Reporta a | —-  |
-| Problemas | Necesita de funciones disruptivas y que puedan llamar la atención de potenciales usuarios finales |
+| **Responsabilidades clave** | Atender llamadas de clientes, registrar servicios en Excel, contactar y asignar reparadores manualmente, hacer seguimiento telefónico. |
+| **Background Técnico** | Básico (manejo de ofimática, teléfono). |
+| **Problemas** | Proceso lento y repetitivo, dificultad para encontrar reparadores disponibles, falta de información centralizada, manejo de quejas sin un protocolo. |
 
-| Tipo de usuario | Cliente |
+| Tipo de usuario | **Cliente** |
 | --- | --- |
-| Responsabilidades clave | Buscar reparadores domésticos para contratar a través de la aplicación |
-| Background Técnico | Variado |
-| Entregables | Una nueva funcionalidad en la aplicación |
-| Reporta a | El cliente, a través de la aplicación, reporta a la startup sus opiniones acerca de la funcionalidad |
-| Problemas | Carece de una manera de buscar reparadores adecuados a través del lenguaje cotidiano |
+| **Responsabilidades clave** | Solicitar un servicio de reparación, coordinar con el asistente y el reparador, realizar el pago. |
+| **Background Técnico** | Variado, generalmente no técnico. Usuario promedio de aplicaciones. |
+| **Problemas** | Incertidumbre sobre la calidad y confianza del reparador, falta de visibilidad sobre el tiempo de llegada, proceso de solicitud lento y por teléfono. |
 
-### 6.3. Ambiente del usuario
+| Tipo de usuario | **Reparador** |
+| --- | --- |
+| **Responsabilidades clave** | Estar disponible para aceptar trabajos, ejecutar el servicio de reparación, cobrar al cliente y reportar a la empresa. |
+| **Background Técnico** | Técnico en su especialidad. Nivel de habilidad con apps varía. |
+| **Problemas** | Dependencia de llamadas para obtener trabajo, dificultad para organizar su agenda, informalidad en los acuerdos y pagos. |
 
-El ambiente del usuario final estará constituido principalmente por espacios residenciales y contextos urbanos cotidianos, ya que el sistema está orientado a personas que requieren servicios domésticos desde su hogar o desde cualquier ubicación con acceso a internet.
+#### **6.3. Ambiente del usuario**
+El ambiente del usuario final estará constituido principalmente por espacios residenciales y contextos urbanos cotidianos, ya que el sistema está orientado a personas que requieren servicios domésticos desde su hogar o cualquier ubicación con acceso a internet.
 
-### 6.4. Alternativas y competencias
+#### **6.4. Alternativas y competencias**
 
 | Alternativa Competitiva | Producto o solución | Fortalezas | Debilidades |
 | --- | --- | --- | --- |
-| Búsqueda tradicional (Manual) | Funcionalidad existente en la aplicación | Libertad para elegir, búsqueda manual con parámetros personalizados | Manual, exige explicarle a la aplicación lo que se quiere buscar |
+| Competencia Directa | MaestroADomicilio, Técnico a Domicilio Lima | Posicionamiento existente en el mercado. | Posible falta de innovación tecnológica (IA), experiencia de usuario mejorable. |
+| Métodos Tradicionales | Contactos personales, directorios telefónicos | Confianza basada en recomendaciones personales. | Proceso de búsqueda lento, poca variedad, sin garantía. |
 
-## 7. Resumen del producto
+### **7. Resumen del producto**
 
-### 7.1. Perspectiva del producto
+#### **7.1. Perspectiva del producto**
+El producto a desarrollar es una plataforma integral que transformará la operación manual de Fixceler en un ecosistema digital. Se convertirá en la herramienta central del negocio, automatizando la intermediación entre clientes y reparadores.
 
-El producto que se desarrollará es un módulo de IA que ofrece una nueva experiencia de búsqueda a los usuarios de primer tipo con el fin de ofrecer una alternativa más simple y basada en lenguaje natural
-
-### 7.2. Resumen de capacidades
+#### **7.2. Resumen de capacidades**
 
 | Función | Características | Beneficios |
 | --- | --- | --- |
-| Interpretar de forma inteligente las solicitudes de los clientes | Analiza la solicitud escrita del cliente, busca candidatos que coincidan con la solicitud y los ofrece al cliente | Permite el uso del lenguaje natural para interactuar con la aplicación |
-| Evaluar y clasificar a los reparadores disponibles utilizando múltiples criterios | En base a criterios de elección, el módulo determina cuáles son los candidatos más aptos con respecto a una solicitud | Facilita el proceso de elección de candidatos |
-| Sugerir los mejores candidatos posibles devolviendo una lista ordenada y personalizada según la solicitud del cliente | Ofrece una lista con los candidatos seleccionados y sus respectivos datos | El cliente será libre de elegir al candidato, si no le convence la lista puede pulir aún más su solicitud |
-| Integrarse con la aplicación existente mediante una API | El módulo tendrá la capacidad de integrarse fácilmente sobre la aplicación, sin insertar cambios muy significativos | Adoptación rápida de las nuevas funcionalidades |
+| **Portal de Autoservicio** | Clientes y reparadores gestionan sus perfiles, solicitudes y servicios de forma autónoma. | Elimina la necesidad de intermediación telefónica, agiliza los tiempos. |
+| **Asignación Inteligente** | El sistema analiza la solicitud y sugiere al reparador más idóneo basado en criterios definidos. | Optimiza la asignación, mejora la calidad y la eficiencia del servicio. |
+| **Seguimiento y Notificaciones** | El cliente puede ver la ubicación del reparador en tiempo real y recibe notificaciones automáticas. | Aumenta la transparencia, reduce la incertidumbre y mejora la experiencia del cliente. |
 
-### 7.3. Suposiciones, dependencias y riesgos
+#### **7.3. Suposiciones, dependencias y riesgos**
 
-El riesgo real de implementar este módulo es bajo, debido a que se trata de una unidad que tiene la capacidad de integrarse sin mucho acoplamiento a la aplicación actual. En el caso de que la implementación no sea bien recibida, se puede remover sin problemas y sin afectar las otras operaciones de la aplicación
+La implementación del sistema supone que tanto clientes como reparadores adoptarán la nueva plataforma digital. El principal riesgo es la resistencia al cambio por parte de los reparadores acostumbrados al modelo actual. Este riesgo se mitiga con una plataforma fácil de usar y que ofrece claros beneficios (más trabajo, mejor organización).
 
-## 8. Características de los atributos
+### **8. Características de los atributos**
 
-A continuación, presentamos una serie de atributos con su significado, valor y peso que serán utiles para evaluar los componentes propuestos a desarrollar.
+A continuación, presentamos una serie de atributos con su significado, valor y peso que serán útiles para evaluar los componentes propuestos a desarrollar.
 
 | Atributos | Descripción | Valor | Peso respectivo |
-| --- | --- | --- | --- |
-| Necesidad | Indica el grado de necesidad en que se requiere el producto | A: Alta |     |
-| M: Media |     |     |     |
-| B: Baja | 5   |     |     |
-| 3   |     |     |     |
-| 1   |     |     |     |
-| Fiabilidad | Indica el grado de confiabilidad del producto | A: Alta |     |
-| M: Media |     |     |     |
-| B: Baja | 5   |     |     |
-| 3   |     |     |     |
-| 1   |     |     |     |
-| Eficacia | Indica el grado de cumplimiento que se esperaba tener | A: Alta |     |
-| M: Media |     |     |     |
-| B: Baja | 5   |     |     |
-| 3   |     |     |     |
-| 1   |     |     |     |
-| Seguridad | Indica el grado de seguridad con respecto a la organización, frente a externos | A: Alta |     |
-| M: Media |     |     |     |
-| B: Baja | 5   |     |     |
-| 3   |     |     |     |
-| 1   |     |     |     |
+| --- | --- | --- |----------------|
+| **Necesidad** | Indica el grado de necesidad en que se requiere el producto | A:Alta</br>M:Media</br>B:Baja | 5 <br/>3<br/>1 |
+| **Fiabilidad** | Indica el grado de confiabilidad del producto | A:Alta</br>M:Media</br>B:Baja | 5 <br/>3<br/>1 | 
+| **Eficacia** | Indica el grado de cumplimiento que se esperaba tener | A:Alta</br>M:Media</br>B:Baja | 5 <br/>3<br/>1 | 
+| **Seguridad** | Indica el grado de seguridad con respecto a la organización, frente a externos | A:Alta</br>M:Media</br>B:Baja | 5 <br/>3<br/>1 | 
 
-## 9. Características del producto
+### **9. Características del producto**
 
 | Nombre de la característica | Descripción | Inputs | Outputs | Usuario Responsable |
 | --- | --- | --- | --- | --- |
-| Recepcionar solicitudes de información (prompts) | Se recibe la solicitud por parte del cliente autorizado del módulo | Solicitud o prompt del cliente del módulo | Solicitud del cliente con datos adicionales recopilados | El cliente del módulo |
-| Solicitar datos reales de repartidores al servidor de la aplicación | Se extraen los datos de los repartidores del servidor de la aplicación | Petición HTTP realizada al servidor | Lista de reparadores disponibles en la aplicación | El mismo módulo |
-| Analizar y elegir candidatos potenciales | Se seleccionan los candidatos que coinciden mejor con la solicitud | Solicitud del cliente mejorada y lista de reparadores disponibles en la aplicación | Lista de candidatos analizados y posiblemente alineados con la solicitud | El mismo módulo |
-| Enviar la lista de candidatos alineados con la solicitud | Se devuelve una lista de candidatos al cliente que puede coincidir con la descripción de la solicitud | Lista de candidatos analizados y posiblemente alineados con la solicitud | Lista de candidatos refinada y apta para el uso del cliente del módulo | El mismo módulo |
+| **Gestión de Perfiles de Usuario** | Permite a clientes y reparadores crear, visualizar y actualizar sus cuentas personales y profesionales en la plataforma. | Datos de registro (nombre, email, etc.), especialidades, certificados. | Perfil de usuario público y privado. | Cliente / Reparador |
+| **Solicitud de Servicio** | Flujo completo para que un cliente busque, seleccione y envíe una solicitud de servicio a un reparador a través de la plataforma. | Descripción del problema, filtros de búsqueda (especialidad, ubicación). | Solicitud de servicio formal enviada al reparador. | Cliente |
+| **Gestión de Contratación** | Permite al reparador aceptar, rechazar o negociar una solicitud. Culmina con la creación de un contrato virtual. | Respuesta del reparador (aceptar/oferta). | Contrato de servicio virtual generado. | Reparador / Cliente |
+| **Seguimiento y Finalización** | Permite el seguimiento del servicio en tiempo real y la confirmación mutua de la finalización y el pago (externo). | Ubicación del reparador, confirmaciones de las partes. | Servicio marcado como "Completado" en el sistema. | Cliente / Reparador |
 
-## 10. Restricciones
+### **10. Restricciones**
 
-El módulo esta restringido a solo poder interactuar con el servidor como un lector, no puede escribr sobre la base de datos de la aplicación. Es importante asegurarse de que el modelo utilizado sea completamente confiable antes de extenderlo con funcionalidades más avanzadas que involucren escribir sobre la base de datos.
+Las restricciones principales del proyecto son las decisiones tecnológicas tomadas por el equipo de desarrollo, que incluyen el uso de JavaScript (Node.js/React) como lenguaje principal, MySQL como motor de base de datos y la integración con APIs externas como Google Maps y Gemini. El sistema debe operar dentro del marco legal de protección de datos del Perú.
 
-## 11. Análisis de factibilidad del proyecto
+### **11. Análisis de factibilidad del proyecto**
 
-El análisis de factibilidad del proyecto nos permite determinar si el proyecto debe desarrollarse o no, es decir la posibilidad de que el sistema propuesto sea de utilidad para la organización y si merece la inversión de recursos y finalmente la aceptación.
+#### **11.1 Factibilidad Operacional**
 
-### 11.1 Factibilidad Operacional
+La nueva plataforma será aceptada por los usuarios ya que reemplaza un proceso manual lento y poco transparente por una experiencia digital eficiente y confiable, brindando beneficios directos tanto a clientes (rapidez, seguridad) como a reparadores (más oportunidades, mejor organización).
 
-El módulo que se planea desarrollar será aceptado por los usuarios ya que les brinda beneficios, es decir, aumentará la eficiencia, rapidez y facilidad para solicitar los servicios de reparación de los reparadores de parte de los clientes.
+#### **11.2 Factibilidad Tecnológica**
 
-### 11.2 Factibilidad Tecnológica
+El equipo de desarrollo cuenta con la experiencia y el conocimiento necesarios en las tecnologías seleccionadas (JavaScript, React, Node.js, MySQL) para construir la plataforma. No se requiere la adquisición de hardware o software especializado más allá de las herramientas de desarrollo estándar.
 
-La empresa Fixceler cuenta actualmente con la tecnología necesaria para la implementación del modulo de IA, por lo que no será necesario ninguna instalación de equipos nuevos.
+#### **11.3 Factibilidad Económico-Financiera**
 
-### 11.3 Factibilidad Económico-Financiera
+Los costos estimados para el desarrollo de una primera versión funcional de la plataforma (Producto Mínimo Viable) son:
 
-| Desarrollo del módulo | $800 |
+| Concepto | Costo Estimado |
 | --- | --- |
+| Desarrollo de la Plataforma (MVP) | $800 |
 | Personal | $1500 |
 | Mantenimiento | $600 |
 
-### 11.4 Beneficios Tangibles e Intangibles Esperados
+#### **11.4 Beneficios Tangibles e Intangibles Esperados**
 
-1. Beneficios Tangibles
-- Reducción del tiempo promedio para que un cliente encuentre y contrate un reparador adecuado.
-- Incremento en la cantidad de solicitudes atendidas gracias a la automatización del proceso de búsqueda y selección.
-- Disminución de costos operativos relacionados con soporte manual para la búsqueda y asignación de reparadores.
-- Mejora en la precisión de emparejamiento entre clientes y reparadores, lo que puede traducirse en menor tasa de cancelaciones y quejas.
-- Posible aumento de ingresos por nuevas funcionalidades basadas en IA.
-2. Beneficios Intangibles
-- Mejor imagen y posicionamiento de la empresa como innovadora y tecnológica en el sector.
-- Mayor satisfacción y fidelización de clientes y reparadores gracias a una experiencia más fluida y acertada.
+1. **Beneficios Tangibles**
+    - Reducción del tiempo de gestión por servicio en más de un 50% al eliminar llamadas y registros manuales.
+    - Incremento en la capacidad de gestionar solicitudes simultáneas.
+    - Disminución de costos operativos asociados a la gestión telefónica.
+    - Creación de una base de datos centralizada para análisis de negocio y toma de decisiones.
+2. **Beneficios Intangibles**
+    - Mejora radical de la imagen de la empresa, posicionándola como una solución moderna y tecnológica.
+    - Aumento significativo de la satisfacción y fidelización de clientes y reparadores.
 
-### 11.5 Aprobación de la Solicitud
+#### **11.5 Aprobación de la Solicitud**
 
-La empresa Fixceler ha acordado con el equipo desarrollador, brindar la información necesaria para la total comprensión del negocio.
+La dirección de Fixceler ha aprobado el desarrollo del proyecto y se ha comprometido a brindar la información necesaria al equipo de desarrollo para la total comprensión del negocio.
 
-## 12. Otros requerimientos
+#### **12. Otros requerimientos**
 
-### 12.1 Estándares
+#### **12.1 Estándares**
 
-- Uso de base de datos MySQL
-- Uso de lenguaje de programación JavaScript con Node.js y React.js
-- Uso de un lenguaje de procesos, BizagiProcessModeler
-- Uso de un sistema operativo Libre (Ubuntu) o licenciado (Windows 10/11)
+- Uso de base de datos MySQL.
+- Uso de lenguaje de programación JavaScript con Node.js y React.js.
+- Uso de Bizagi Process Modeler para el modelado de procesos.
+- Uso de un sistema operativo Libre (Ubuntu) o licenciado (Windows 10/11) para el desarrollo.
 
-### 12.2 Requerimientos de la Implementación
+#### **12.2 Requerimientos de la Implementación**
 
-- Equipos con al menos 8GB de RAM, procesador i5 o equivalente, SSD.
-- IDEs (VS Code, WebStorm), Git, Node.js, Cliente MySQL, Postman/Insomnia.
+- **Equipo de desarrollo:** Equipos con al menos 8GB de RAM, procesador i5 o equivalente, SSD.
+- **Software de desarrollo:** IDEs (VS Code, WebStorm), Git, Node.js, Cliente MySQL, Postman/Insomnia.
 
-### 12.3 Requerimientos de Rendimiento
+#### **12.3 Requerimientos de Rendimiento**
 
-- La interpretación de las solicitudes de los clientes debe completarse en un tiempo que no impacte negativamente la experiencia del usuario (idealmente < 500ms).
+- Las funciones críticas como la búsqueda de reparadores y la carga de la página principal deben completarse en un tiempo menor a 3 segundos en condiciones de uso normales.
 
-### 12.4 Requerimientos del Medio Ambiente
+#### **12.4 Requerimientos del Medio Ambiente**
 
-- Se deben generar un Backup de la base de datos como la de los archivos de sistema, las cuales se guardaran en otra ubicación segura para mantenerla a salvo en caso de algún accidente.
-- El sistema operativo debe contener un antivirus sofisticado para evitar infiltraciones al sistema.
+- Se deben implementar rutinas de backup automáticas y periódicas de la base de datos, almacenadas en una ubicación segura y redundante.
+- El servidor de producción debe contar con medidas de seguridad estándar, incluyendo un firewall configurado y protección contra ataques comunes.
 
-## 13. Requerimientos de Documentación
+### **13. Requerimientos de Documentación**
 
-### 13.1 Ayuda en Línea
+#### **13.1 Ayuda en Línea**
 
-- El desarrollo de este sistema contará con ayuda en línea, ya que el número de
-  usuarios tiene una expectiva de alto, además estos serán capacitados en el mismo establecimiento de la
-  empresa Fixceler.
-  Las consultas que requieran hacer los clientes las harán vía telefónica a la
-  empresa Fixceler.
+El sistema contará con una sección de "Preguntas Frecuentes" (FAQ) para resolver las dudas más comunes de clientes y reparadores. Adicionalmente, se ofrecerá soporte a través de un número telefónico o canal de contacto para casos que no puedan ser resueltos por la ayuda en línea.
 
 ---

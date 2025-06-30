@@ -3,258 +3,203 @@ title: Modelo de Casos de Uso del Negocio
 description: Descripción detallada del modelo de casos de uso del negocio de Fixceler.
 ---
 
-## Agentes del Negocio
+### **Agentes del negocio**
 
-- **Cliente:** Quien busca y contrata un servicio.
-- **Reparador:** Quien ofrece y ejecuta el servicio.
+- **Cliente:** Es la persona o entidad externa que contacta a Fixceler para solicitar un servicio de reparación a domicilio. Es el iniciador del flujo de servicio.
+- **Reparador:** Es el profesional técnico externo que se afilia a la red de Fixceler para ser asignado a servicios de reparación. Es responsable de la ejecución técnica del trabajo.
 
-## Trabajadores del Negocio
+### **Trabajadores del negocio**
 
-- **Sistema Fixceler:** El facilitador central de todos los procesos.
-- **Sistema Fixceler (Módulo de IA):** El componente especializado que asiste al Cliente en la búsqueda y selección de reparadores.
-- **Sistema Fixceler (Módulo de Resolución Automatizada):** El componente que gestiona las disputas aplicando reglas de negocio.
-
-## Casos de Uso del Negocio
-
-### Diagrama de Casos de Uso
-
-![](file:///C:/Users/User/AppData/Roaming/marktext/images/2025-06-15-22-35-15-image.png?msec=1750106309737)
+- **Asistente de Operaciones (AO):** Es el empleado interno de Fixceler responsable de gestionar todo el proceso de forma manual. Sus herramientas son el teléfono y las hojas de cálculo. Actúa como el intermediario principal entre el Cliente y el Reparador.
 
 ---
 
-# Sistema Fixceler
+### **Casos de uso del negocio**
 
-## Especificación de Caso de Uso del Negocio
+A continuación, se presentan los Casos de Uso del Negocio (CUN) que describen los procesos principales del modelo operativo manual de Fixceler:
 
-## Contratación de Servicio
+1. **Gestión de Solicitud de Servicio**
+2. **Gestión del Servicio de Reparación**
+3. **Gestión de Registro de Reparador**
+4. **Gestión de Atención al Cliente**
+
+### **Diagrama de Casos de Uso**
+
+El diagrama de casos de uso muestra la interacción entre los actores externos y los procesos de negocio:
+
+- El **Cliente** participa en:
+  - `Gestión de Solicitud de Servicio` (lo inicia).
+  - `Gestión del Servicio de Reparación`.
+  - `Gestión de Atención al Cliente`.
+- El **Reparador** participa en:
+  - `Gestión de Registro de Reparador` (lo inicia).
+  - `Gestión de Solicitud de Servicio`.
+  - `Gestión del Servicio de Reparación`.
+  - `Gestión de Atención al Cliente`.
 
 ---
 
 ### Historial de revisión
 
-| Fecha | Versión | Descripción | Autor |
-| --- | --- | --- | --- |
-| 15/06/2025 | 1.0 | Versión inicial basada en el análisis de los procesos del negocio. | El equipo de trabajo |
+| Fecha      | Versión | Descripción                                                        | Autor                |
+|------------|---------|--------------------------------------------------------------------|----------------------|
+| 23/05/2025 | 1.0     | Versión inicial basada en el análisis de los procesos del negocio. | El equipo de trabajo |
+| 15/06/2025 | 2.0     | Caso de uso del Negocio de Atención al cliente añadido.            | El equipo de trabajo |
 
 ---
 
-### Especificación de Caso de Uso del Negocio Contratación de Servicio
+### **Especificación de Caso de Uso del Negocio Gestión de Solicitud de Servicio**
 
-#### 1. Introducción
+### **1. Introducción**
 
-El presente trabajo estudia la evaluación del proceso de negocio contratación de servicio en la cual se encuentran involucrados el cliente, el reparador y el sistema Fixceler.
+El presente trabajo estudia la evaluación del proceso de negocio de **Gestión de Solicitud de Servicio**, en la cual se encuentran involucrados el Cliente, el Reparador y, como trabajador principal, el Asistente de Operaciones.
 
-##### **1.1 Propósito**
+#### **1.1. Propósito**
+Registrar de manera formal las solicitudes de servicio entrantes de los clientes y asignar a un reparador calificado de la red de la empresa para atender dicha solicitud de manera oportuna.
 
-Establecer el proceso de negocio completo a través del cual un Cliente contrata a un Reparador para un servicio específico. El propósito es facilitar una transacción segura, eficiente y transparente, desde la búsqueda de candidatos hasta la finalización y calificación del servicio, utilizando la plataforma Fixceler como facilitador central.
+#### **1.2. Alcance**
+El caso de uso comienza con la llamada inicial del Cliente a la empresa y finaliza en el momento exacto en que el Asistente de Operaciones (AO) le comunica al Cliente que un reparador específico ha sido asignado.
 
-##### **1.2 Alcance**
+#### **1.3. Definiciones, Acrónimos y Abreviaciones**
+Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas en el Glosario al final de este documento.
 
-El caso de uso comienza cuando un Cliente tiene una necesidad y busca a un Reparador en la plataforma. Cubre la solicitud del servicio, la negociación, la contratación, la ejecución y seguimiento del trabajo, la confirmación del pago y la calificación final. El proceso termina cuando el servicio ha sido completado y calificado por el cliente.
+#### **1.4. Referencias**
 
-##### **1.3 Definiciones, Acrónimos y Abreviaciones**
+- Entrevistas con el Gerente General de Fixceler.
+- Análisis del proceso manual y de los registros en hojas de cálculo existentes.
 
-Ver el glosario de términos del proyecto Fixceler.
+### **2. Descripción Breve**
 
-##### **1.4 Referencias**
-
-La información para la elaboración de este CUN ha sido extraída de los documentos de procesos proporcionados.
-
-La información para la elaboración de este CUN ha sido extraída de los documentos de procesos proporcionados, que incluyen las descripciones para: *Buscar reparador, Solicitar servicio, Negociar Precio, Contratar servicio, Terminar servicio, Confirmar pago y Dar calificación*.
-
-### **2. Gestionar Contratación de Servicio**
-
-##### **2.1 Descripción Breve**
-
-Este CUN describe el ciclo de vida completo de un servicio en Fixceler. Permite a un Cliente buscar y seleccionar a un Reparador, acordar los términos económicos, formalizar un contrato virtual, dar seguimiento al trabajo y finalizar la transacción de manera satisfactoria para ambas partes.
+Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien actúa como el intermediario central. El AO atiende las solicitudes telefónicas, las registra en una hoja de cálculo, busca y contacta manualmente a reparadores de una lista hasta encontrar uno disponible, y finalmente coordina y confirma la asignación a ambas partes.
 
 ### **3. Flujo de trabajo básico**
 
-1. El caso de uso comienza cuando el **Cliente** busca un **Reparador** en la plataforma, utilizando criterios de búsqueda y filtros para encontrar candidatos adecuados.
-2. El **Cliente** selecciona un **Reparador** de la lista y le envía una "Solicitud de Servicio", especificando los detalles del trabajo y, opcionalmente, un monto propuesto.
-3. El **Reparador** recibe la notificación de la solicitud, la revisa y la **acepta**.
-4. Al haber un acuerdo en el precio, el **Sistema Fixceler** genera un **Contrato de Servicio** virtual con los términos acordados, que es aceptado por ambas partes.
-5. El **Reparador** se dirige a la ubicación del Cliente. Durante este trayecto, el Cliente puede realizar un seguimiento de su ubicación aproximada.
-6. El **Reparador** realiza el servicio acordado.
-7. Una vez finalizado el trabajo, el **Reparador** o el **Cliente** confirman la terminación del servicio en la plataforma, y la otra parte valida dicha confirmación.
-8. El **Cliente** realiza el pago del monto acordado por un medio externo y ambas partes confirman la recepción del pago en el **Sistema Fixceler**.
-9. Con el pago confirmado, el **Sistema Fixceler** cierra el contrato y lo marca como "Completado".
-10. El **Cliente** califica el servicio recibido y la experiencia con el **Reparador**.
-11. El CUN finaliza exitosamente.
+1. El **Cliente** llama al número de la empresa para solicitar un servicio.
+2. El **Asistente de Operaciones (AO)** atiende la llamada y consulta si es un cliente nuevo. Si lo es, invoca el CUN "Gestión de Registro de Reparador" (para el alta de cliente). Si es un cliente recurrente, verifica su dirección usando su DNI.
+3. El AO registra los detalles del problema en una nueva fila de la hoja de cálculo "Servicios".
+4. El AO informa al Cliente: "Gracias. Buscaré un reparador disponible y le devolveré la llamada para confirmar la asignación". La llamada finaliza temporalmente.
+5. El AO consulta su hoja de cálculo "Reparadores" para identificar a los candidatos adecuados por especialidad y que figuren como "Disponibles".
+6. El AO contacta al primer candidato de la lista por mensajería (WhatsApp), enviándole el tipo de servicio y el distrito.
+7. El **Reparador** contactado responde que **SÍ** está disponible y acepta el trabajo.
+8. El AO actualiza el estado del Reparador a "No Disponible" en la hoja de cálculo de "Reparadores".
+9. El AO asigna el nombre y DNI del Reparador a la solicitud del Cliente en la hoja de cálculo de "Servicios".
+10. El AO llama de vuelta al **Cliente** para informarle: "Le hemos asignado al reparador [Nombre del Reparador] con DNI [DNI del Reparador]".
+11. El AO contacta una última vez al **Reparador** para darle la confirmación final y recordarle llevar el formato de contrato físico.
+12. El CUN finaliza exitosamente.
 
 ### **4. Flujos de trabajo alternativos**
 
-#### **4.1. Negociación de Precio**
+#### **4.1. Reparador no disponible:** En el paso 7, el Reparador contactado responde que **NO** está disponible. El AO debe regresar al paso 5 y contactar al siguiente candidato de la lista.
+#### **4.2. Ningún reparador disponible:** Si el AO contacta a todos los reparadores viables y ninguno acepta, llama de vuelta al Cliente para informarle que no es posible atender su solicitud en ese momento.
 
-- En el paso 3 del flujo básico, si el **Reparador** no está de acuerdo con el monto propuesto o si el **Cliente** no propuso un monto inicial, el **Reparador** puede rechazar la solicitud e iniciar una negociación con una contraoferta.
-- El **Cliente** recibe la contraoferta y puede aceptarla (el flujo continúa en el paso 4 del flujo básico) o rechazarla y proponer un nuevo monto.
-- Este ciclo de negociación continúa hasta que una de las partes acepta una propuesta o decide terminar la negociación, finalizando el CUN sin éxito.
+### **Agentes implicados en el proceso de negocio**
 
-#### **4.2. Cancelación de Contrato Post-Acuerdo**
+- **Actores:** Cliente, Reparador.
+- **Trabajador del Negocio:** Asistente de Operaciones (AO).
 
-- En cualquier momento después del paso 4 (generación del contrato) y antes del paso 7 (terminación del servicio), cualquiera de las dos partes puede cancelar el contrato.
-- La parte que cancela debe indicar un motivo. El sistema notifica a la otra parte de la cancelación.
-- El **Sistema Fixceler** aplica las **Reglas de Negocio sobre Sanciones** a la parte que ha cancelado.
-- El CUN finaliza.
+### **Diagrama de roles del caso de uso: Gestión de Solicitud de Servicio**
 
-### **Agentes implicados en el proceso de negocio: Contratación de Servicio**
-
-![](file:///C:/Users/User/AppData/Roaming/marktext/images/2025-06-16-01-14-47-image.png?msec=1750106309725)
+*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
-- **Cliente:**
-- Buscar y seleccionar Reparador.
-- Enviar Solicitud de Servicio.
-- Negociar precio.
-- Aceptar Contrato.
-- Realizar y confirmar pago.
-- Confirmar terminación de servicio.
-- Calificar servicio.
-- **Reparador:**
-- Recibir y evaluar Solicitud de Servicio.
-- Aceptar o rechazar solicitud.
-- Negociar precio.
-- Aceptar Contrato.
-- Ejecutar servicio.
-- Confirmar terminación de servicio.
-- Confirmar recepción de pago.
+➤ **Cliente**
+
+- Llamar para solicitar un servicio.
+- Proporcionar datos personales (nombre, DNI) y del servicio.
+- Esperar y recibir la llamada de confirmación.
+
+➤ **Asistente de Operaciones**
+
+- Atender la llamada del cliente.
+- Registrar o verificar datos del cliente en la hoja de cálculo "Clientes".
+- Registrar nueva solicitud en la hoja de cálculo "Servicios".
+- Buscar y contactar reparadores de la lista de contactos.
+- Asignar el servicio al reparador disponible.
+- Actualizar el estado del reparador a "No Disponible".
+- Notificar al cliente y al reparador la confirmación de la asignación.
+
+### **Diagrama de Actividad**
+
+*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
 
 ### **Lista de actividades a automatizar**
 
-- Facilitar la búsqueda de reparadores al Cliente (esta actividad será optimizada con un módulo de IA).
+- Registro digital de clientes y solicitudes.
+- Consulta automática de la disponibilidad de reparadores en tiempo real.
+- Sistema de búsqueda y filtro de reparadores.
+- Envío de notificaciones automáticas a todas las partes.
+- Asignación automática del reparador en el sistema.
 
-### Listado de entidades del proceso del negocio
+### **Listado de entidades del proceso del negocio**
 
-- Solicitud de Servicio
-- Contrato de Servicio
-- Calificación a Reparador
-- Calificación a Cliente
-- Pago
-- Sanción
+- Solicitud de Servicio (fila en Excel "Servicios").
+- Cliente (fila en Excel "Clientes").
+- Reparador (fila en Excel "Reparadores").
+- Acuerdo Verbal de Asignación.
 
-### **Reglas de negocio del proceso de negocio**
+### **Reglas de negocio del proceso de negocio: (Gestión de Solicitud de Servicio)**
 
-➤ **Objeto de información: Solicitud de Servicio** (Basado en la tabla `solicitud`)
+➤ **Objeto de información: Solicitud de Servicio**
 
-- **Atributos:**
+- **Atributos**
+  - Fecha de solicitud
+  - Datos del Cliente (Nombre, DNI)
+  - Descripción del problema
+  - Datos del Reparador Asignado
+  - Estado (Pendiente, Asignado, Cancelado)
+- **Restricciones**
+  - Debe tener un cliente asociado.
+  - Debe tener un reparador asignado para pasar a estado "Asignado".
 
-- ID de Solicitud (único)
-- ID de Cliente (quien solicita)
-- ID de Reparador (a quien se asigna)
-- Descripción del problema/servicio
-- Monto propuesto
-- Fecha de solicitud
-- Estado (Pendiente, Asignada, Completada, etc. )
-- **Restricciones:**
+➤ **Objeto de información: Reparador**
 
-- El `monto` debe ser mayor a 0 y menor o igual a 500.
+- **Atributos**
+  - Nombre, DNI, Teléfono
+  - Especialidades
+  - Estado (Disponible, No Disponible)
+- **Restricciones**
+  - Un reparador no puede ser asignado a un nuevo servicio si su estado es "No Disponible".
 
-➤ **Objeto de información: Contrato de Servicio** (Representado por una `Solicitud` en estado avanzado)
+### **Detalle de Actividades del Proceso**
 
-- **Atributos:**
-- ID de Contrato (corresponde a `id_solicitud`)
-- Partes involucradas (ID Cliente, ID Reparador)
-- Monto final acordado (`monto`)
-- Fecha de acuerdo (`fecha_contrato`)
-- Fecha de finalización (`fecha_finalizacion`)
-- **Restricciones:**
-- La `fecha_contrato` se registra cuando el estado de la solicitud pasa a "Asignada".
-- La `fecha_finalizacion` se registra cuando el estado pasa a "Completada".
+➤ **Actividad:** Registrar Solicitud de Servicio.
 
-➤ **Objeto de información: Calificación a Reparador** (Basado en la tabla `reseña_a_reparador`)
+- **Origen:** Llamada entrante de un Cliente.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** El AO está disponible para atender el teléfono.
+- **Post Condiciones:** La información del servicio y del cliente (nuevo o verificado) está registrada en las hojas de cálculo. El cliente ha sido informado de que se le devolverá la llamada.
+- **Caso de uso del sistema:** `<Registrar Solicitud>`
 
-- **Atributos:**
-- ID de Reseña
-- ID de Contrato (`id_solicitud`)
-- Calificación (de 1 a 5)
-- Comentario
-- Fecha
-- **Restricciones:**
-- La `calificacion` debe ser un valor entre 1 y 5.
-- Solo puede existir una calificación de reparador por contrato (`id_solicitud` es único).
-- Solo el Reparador asociado al contrato puede emitir esta calificación.
+➤ **Actividad:** Buscar y Contactar Reparador.
 
-➤ **Objeto de información: Sanción** (Representado por la relación entre `usuario` y `historial_estado_usuario`)
+- **Origen:** Una solicitud ha sido registrada y está pendiente de asignación.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** Existe un registro de servicio en estado "Pendiente" en la hoja de cálculo.
+- **Post Condiciones:** Se ha encontrado a un reparador que ha aceptado verbalmente el servicio.
+- **Caso de uso del sistema:** `<Buscar y Asignar Reparador>`
 
-- **Atributos:**
-- ID de Usuario (sancionado).
-- Tipo de Estado (Habilitado, Suspendido, Inhabilitado).
-- Fecha de inicio del estado.
-- **Restricciones:**
-- La cancelación de un contrato por un usuario genera un registro en su `historial_estado_usuario` y puede cambiar su `id_estado_usuario` según las reglas.
-- Un estado de "Suspendido" debe tener una duración definida antes de volver a "Habilitado".
-- Un estado de "Inhabilitado" es permanente.
+➤ **Actividad:** Asignar Servicio en Registros.
 
-➤ **Detalle de Actividades del Proceso**
+- **Origen:** Un reparador ha aceptado el trabajo.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** Acuerdo verbal con un reparador disponible.
+- **Post Condiciones:** El estado del reparador se ha actualizado a "No Disponible" y el servicio se ha asignado formalmente en la hoja de cálculo "Servicios".
+- **Caso de uso del sistema:** `<Actualizar Estado de Servicio>`
 
-➤ **Actividad:** Buscar y Seleccionar Reparador.
+➤ **Actividad:** Notificar Confirmación a las Partes.
 
-- **Origen:** Necesidad de servicio por parte del cliente.
-- **Agente:** Cliente.
-- **Precondiciones:** El Cliente ha iniciado sesión en la plataforma.
-- **Post Condiciones:** El Cliente ha identificado y seleccionado a un Reparador potencial.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
+- **Origen:** La asignación ha sido registrada en las hojas de cálculo.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** La asignación está formalizada en los registros internos.
+- **Post Condiciones:** El Cliente y el Reparador han sido notificados telefónicamente de que la asignación es oficial y se han dado las instrucciones finales (recordatorio del contrato al reparador).
+- **Caso de uso del sistema:** `<Notificar Asignación>`
 
-➤ **Actividad:** Enviar Solicitud de Servicio.
+---
 
-- **Origen:** El Cliente ha seleccionado a un Reparador.
-- **Agente:** Cliente.
-- **Precondiciones:** Un Reparador ha sido seleccionado.
-- **Post Condiciones:** Se ha enviado una solicitud formal al Reparador a través del sistema.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
+### Modelo de caso de uso inicial para el proceso: Gestión del Servicio de Reparación
 
-➤ **Actividad:** Evaluar y Aceptar Solicitud.
-
-- **Origen:** El Reparador recibe una nueva solicitud de servicio.
-- **Agente:** Reparador.
-- **Precondiciones:** Existe una solicitud pendiente de respuesta.
-- **Post Condiciones:** La solicitud ha sido aceptada y se ha confirmado el acuerdo sobre el precio.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-➤ **Actividad:** Generar Contrato de Servicio.
-
-- **Origen:** Se ha aceptado una solicitud y acordado un precio.
-- **Agente:** Sistema Fixceler.
-- **Precondiciones:** Existe un acuerdo entre el Cliente y el Reparador.
-- **Post Condiciones:** Se ha generado un contrato virtual que formaliza el acuerdo.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-➤ **Actividad:** Ejecutar Servicio.
-
-- **Origen:** Se ha generado y aceptado un contrato de servicio.
-- **Agente:** Reparador.
-- **Precondiciones:** Existe un contrato activo.
-- **Post Condiciones:** El trabajo de reparación ha sido realizado físicamente.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-➤ **Actividad:** Confirmar Terminación de Servicio.
-
-- **Origen:** El Reparador ha finalizado el trabajo.
-- **Agente:** Cliente y Reparador.
-- **Precondiciones:** El servicio ha sido ejecutado.
-- **Post Condiciones:** Ambas partes han confirmado en la plataforma que el servicio ha concluido.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-➤ **Actividad:** Confirmar Pago de Servicio.
-
-- **Origen:** El servicio ha sido confirmado como terminado.
-- **Agente:** Cliente y Reparador.
-- **Precondiciones:** El pago físico o externo ha sido realizado por el cliente.
-- **Post Condiciones:** Ambas partes han confirmado en la plataforma que el pago fue realizado y recibido.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-➤ **Actividad:** Calificar Experiencia.
-
-- **Origen:** El contrato ha sido cerrado exitosamente.
-- **Agente:** Cliente y Reparador.
-- **Precondiciones:** El contrato tiene el estado "Completado".
-- **Post Condiciones:** Se ha registrado una calificación de ambas partes en la plataforma.
-- **Caso de uso del sistema:** `<pendiente de especificar>`
-
-### Modelo de caso de uso inicial para el proceso: Gestionar Cuenta de Usuario
-
-### Modelo de objetos del negocio del proceso de objetos: Gestionar Cuenta de Usuario
+### Modelo de objetos del negocio del proceso de objetos: Gestión del Servicio de Reparación
 
 ---
 
@@ -272,144 +217,157 @@ Este CUN describe el ciclo de vida completo de un servicio en Fixceler. Permite 
 
 ---
 
-### Especificación de Caso de Uso del Negocio Gestión Cuenta de Usuario
+### **Especificación de Caso de Uso del Negocio: Gestión del Servicio de Reparación**
 
-#### 1. Introducción
+### **1. Introducción**
+El presente trabajo estudia la evaluación del proceso de negocio de **Gestión del Servicio de Reparación**, en la cual se encuentran involucrados el Cliente y el Reparador como actores principales, y el Asistente de Operaciones como trabajador de soporte y control.
 
-El presente trabajo estudia la evaluación del proceso de negocio gestión cuenta de usuario en la cual se encuentran involucrados el cliente, el reparador y el sistema Fixceler.
+#### **1.1. Propósito**
+Documentar el proceso manual de ejecución, formalización, cierre y liquidación de un servicio de reparación que ya ha sido previamente asignado.
 
-#### **1.1 Propósito**
+#### **1.2. Alcance**
+El caso de uso comienza cuando el Reparador inicia su desplazamiento hacia el domicilio del Cliente. Cubre la firma del contrato físico, la ejecución del trabajo, el pago directo del Cliente al Reparador, el reporte de finalización al Asistente de Operaciones (AO) y la posterior liquidación de la comisión.
 
-Establecer el proceso de negocio para el ciclo de vida de la cuenta de un usuario en la plataforma Fixceler. Esto incluye cómo un individuo se une a la comunidad, cómo accede a su cuenta y cómo mantiene su información personal y profesional actualizada.
+#### **1.3. Definiciones, Acrónimos y Abreviaciones**
+Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas en el Glosario al final de este documento.
 
-#### **1.2 Alcance**
+#### **1.4. Referencias**
 
-El caso de uso comienza cuando una persona sin registrar decide crear una cuenta. Cubre el registro, la validación de datos, el inicio de sesión y la modificación de la información del perfil. Termina cuando el usuario ha completado la gestión de su cuenta.
+- Entrevistas con el Gerente General de Fixceler.
+- Análisis del proceso manual actual.
 
-#### **1.3 Definiciones, Acrónimos y Abreviaciones**
+### **2. Descripción Breve**
 
-Ver el glosario de términos del proyecto Fixceler.
-
-#### **1.4 Referencias**
-
-La información para la elaboración de este CUN ha sido extraída de los documentos de procesos proporcionados, incluyendo "Registrar usuario", "Iniciar sesión" y "Actualizar información", así como del script de la base de datos.
-
-### **2. Gestionar Cuenta de Usuario**
-
-#### **2.1 Descripción Breve**
-
-Este CUN describe cómo una persona se registra en Fixceler, eligiendo ser Cliente o Reparador, y cómo posteriormente gestiona su perfil. Esto incluye el acceso seguro mediante credenciales y la capacidad de actualizar datos personales, de contacto o profesionales, como las especialidades en el caso de un Reparador.
+Este CUN describe la fase de ejecución del servicio. Una vez notificado, el Reparador se dirige al domicilio del cliente, formaliza el acuerdo mediante un contrato físico, realiza el trabajo, cobra directamente el monto total y finalmente reporta la finalización al AO para el registro y posterior liquidación de la comisión de la empresa.
 
 ### **3. Flujo de trabajo básico**
 
-1. El caso de uso comienza cuando un nuevo visitante decide **Registrarse** en la plataforma.
-2. El visitante **Elige su tipo de cuenta** (Cliente o Reparador).
-3. El visitante **Ingresa sus datos personales** requeridos (nombres, apellidos, email, contraseña, etc.). Si elige ser Reparador, también puede añadir sus especialidades y certificados.
-4. El **Sistema Fixceler** valida los datos y **Crea la cuenta del nuevo usuario**.
-5. Posteriormente, cuando un usuario regresa a la plataforma, I**ngresa sus credenciales** (email y contraseña) para **Iniciar Sesión**.
-6. Una vez dentro, el usuario puede decidir **Actualizar su información**, modificando su perfil.
-7. El usuario envía los cambios y el **Sistema Fixceler** los registra.
-8. El CUN finaliza.
+1. El caso de uso comienza cuando el **Reparador** ha sido asignado e inicia su desplazamiento al domicilio del **Cliente**.
+2. Al llegar, el Reparador presenta un formato de contrato pre-impreso, lo llena con los detalles del servicio y el monto acordado. Ambas partes lo firman.
+3. El Reparador realiza el trabajo de reparación.
+4. Al finalizar, el Reparador informa al Cliente el costo total (que debe coincidir con el del contrato).
+5. El **Cliente** paga el 100% del monto directamente al **Reparador** (en efectivo o por billetera digital).
+6. El **Reparador** llama por teléfono al **Asistente de Operaciones (AO)** para reportar la finalización del servicio y el costo final cobrado.
+7. El AO actualiza la hoja de cálculo de "Servicios", marcando el servicio como "Completado" y anotando el costo final.
+8. El AO actualiza el estado del Reparador a "Disponible" en la hoja de cálculo de "Reparadores".
+9. En un día fijo de la semana (ej. viernes), el **Reparador** se acerca a la oficina.
+10. El AO y el Reparador revisan los servicios de la semana en la hoja de cálculo y calculan la comisión total a pagar a la empresa.
+11. El Reparador entrega el monto de la comisión.
+12. El CUN finaliza exitosamente.
 
 ### **4. Flujos de trabajo alternativos**
 
-#### **4.1. Datos de Registro Inválidos**
-
-- En el paso 4 del flujo básico, si los datos ingresados por el visitante no son válidos (ej. email ya existe, DNI duplicado), el **Sistema Fixceler** rechaza el registro, informa al visitante sobre el error y le solicita que corrija la información, regresando al paso 3.
-
-#### **4.2. Credenciales de Inicio de Sesión Inválidas**
-
-- En el paso 5 del flujo básico, si el usuario ingresa un email o contraseña incorrectos, el **Sistema Fixceler** rechaza el acceso y le solicita que lo intente nuevamente.
+#### **4.1. Queja durante el servicio:** 
+Si durante la ejecución del trabajo surge una queja grave por parte del Cliente o del Reparador, se invoca el CUN "Gestión de Atención al Cliente".
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:**
-- Cliente
-- Reparador
-  (Ambos actúan en el rol de "Usuario" en este CUN)
-- **Trabajadores del Negocio:**
-- Sistema Fixceler
+- **Actores:** Cliente, Reparador.
+- **Trabajador del Negocio:** Asistente de Operaciones (AO).
 
-### **Diagrama de Proceso de Negocio (BPM)**
+### **Diagrama de roles del caso de uso: Gestión del Servicio de Reparación**
 
-*[Placeholder para el diagrama BPM del proceso que será insertado por el equipo de desarrollo.]*
+*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+
+### **Acciones necesarias para realizar el proceso de negocio**
+
+➤ **Reparador**
+
+- Desplazarse al domicilio del Cliente.
+- Llenar y obtener la firma del contrato físico.
+- Ejecutar el servicio de reparación.
+- Cobrar el pago directamente del Cliente.
+- Reportar la finalización y el costo al AO.
+- Liquidar comisiones semanalmente.
+  
+➤ **Cliente**
+
+- Recibir al Reparador.
+- Firmar el contrato de servicio.
+- Realizar el pago del servicio.
+  
+➤ **Asistente de Operaciones**
+
+- Recibir el reporte de cierre del Reparador.
+- Actualizar los registros en las hojas de cálculo.
+- Gestionar la liquidación de comisiones.
+
+### **Diagrama de Actividad**
+
+*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+
+### **Lista de actividades a automatizar**
+
+- Notificación automática al cliente cuando el reparador está "en camino".
+- Generación de un contrato virtual con aceptación digital.
+- Registro de pagos y costos en la plataforma.
+- Cálculo automático de comisiones por servicio y por periodo.
+- Sistema de liquidación y transferencia de pagos a través de la plataforma.
 
 ### **Listado de entidades del proceso del negocio**
 
-- Usuario
-- Cliente
-- Reparador
-- Especialidad
-- Certificado
+- Contrato de Servicio (documento físico).
+- Pago (transacción externa).
+- Reporte de Cierre (llamada telefónica).
+- Liquidación de Comisión (registro manual).
 
-### **Reglas de negocio del proceso de negocio**
+### **Reglas de negocio del proceso de negocio: (Gestión del Servicio de Reparación)**
 
-➤ **Objeto de información: Usuario** (Basado en la tabla `usuario`)
+➤ **Objeto de información: Contrato de Servicio**
 
-- **Atributos:** ID de Usuario, Nombres, Apellidos, Email, Contraseña, Teléfono, DNI, Foto de perfil, Fecha de registro, Estado del usuario.
-- **Restricciones:**
-- El `email` debe ser único en toda la plataforma.
-- El `dni` debe ser único y contener 8 dígitos numéricos.
-- El `telefono` debe contener 9 dígitos numéricos.
-- El `id_estado_usuario` por defecto al crear un usuario es "habilitado".
+- **Atributos**
+  - Datos del Cliente (Nombre, DNI, Firma).
+  - Datos del Reparador (Nombre, DNI, Firma).
+  - Descripción del Servicio.
+  - Monto Acordado.
+  - Fecha.
+- **Restricciones**
+  - El trabajo de reparación no debe comenzar hasta que el contrato esté firmado por ambas partes.
 
-➤ **Objeto de información: Cliente** (Basado en la tabla `cliente`)
+➤ **Objeto de información: Liquidación de Comisión**
 
-- **Atributos:** ID de Cliente, ID de Usuario (asociado), Ubicación, Promedio de calificación, Cantidad de calificaciones.
-- **Restricciones:**
-- Un `id_usuario` solo puede estar asociado a un `id_cliente`.
-- La `ubicacion` es un dato obligatorio para el Cliente.
+- **Atributos**
+  - Periodo de liquidación (ej. Semana del 20 al 26 de junio).
+  - Lista de servicios completados.
+  - Monto total de los servicios.
+  - Porcentaje de comisión.
+  - Monto final de la comisión a pagar.
+- **Restricciones**
+  - La liquidación se realiza en una fecha y lugar acordados.
+  - El cálculo se basa en los montos reportados por el reparador y registrados por el AO.
 
-➤ **Objeto de información: Reparador** (Basado en la tabla `reparador`)
+### **Detalle de Actividades del Proceso**
 
-- **Atributos:** ID de Reparador, ID de Usuario (asociado), Disponibilidad, Promedio de calificación, Cantidad de calificaciones, Cantidad de servicios realizados.
-- **Restricciones:**
-- Un `id_usuario` solo puede estar asociado a un `id_reparador`.
-- La `disponibilidad` por defecto es `true` (disponible).
+➤ **Actividad:** Formalizar Contrato Físico.
 
-➤ **Objeto de información: Especialidad** (Basado en las tablas `especialidad` y `reparador_especialidad`)
+- **Origen:** El reparador llega al domicilio del cliente.
+- **Agente:** Reparador, Cliente.
+- **Precondiciones:** El reparador ha sido asignado y conoce los términos del servicio.
+- **Post Condiciones:** Existe un acuerdo físico y firmado que autoriza el inicio del trabajo.
 
-- **Atributos:** ID de Especialidad, Nombre, Descripción.
-- **Restricciones:**
-- Un Reparador puede tener múltiples especialidades, pero la combinación de Reparador y Especialidad debe ser única.
+➤ **Actividad:** Ejecutar Servicio y Gestionar Pago.
 
----
+- **Origen:** El contrato ha sido firmado.
+- **Agente:** Reparador, Cliente.
+- **Precondiciones:** Existe un contrato firmado.
+- **Post Condiciones:** El trabajo de reparación ha sido realizado y el reparador ha recibido el pago completo por parte del cliente.
 
-➤ **Detalle de Actividades del Proceso**
+➤ **Actividad:** Reportar Cierre y Liquidar Comisión.
 
-➤ **Actividad:** Registrar Nuevo Usuario.
+- **Origen:** El servicio ha sido pagado.
+- **Agente:** Reparador, Asistente de Operaciones.
+- **Precondiciones:** El reparador ha finalizado su labor en el domicilio.
+- **Post Condiciones:** El AO ha actualizado los registros y la comisión ha sido entregada a la empresa.
 
-- **Origen:** Decisión de un visitante de unirse a la plataforma.
-- **Agente:** Visitante (futuro Cliente o Reparador).
-- **Precondiciones:** La persona no tiene una cuenta existente.
-- **Post Condiciones:** Se ha creado una nueva cuenta de usuario en la base de datos con estado "habilitado".
-- **Caso de uso del sistema:** `<Registrar Usuario>`
+### Modelo de caso de uso inicial para el proceso: Gestión del Servicio de Reparación
 
-➤ **Actividad:** Iniciar Sesión.
-
-- **Origen:** Un usuario registrado desea acceder a la plataforma.
-- **Agente:** Usuario.
-- **Precondiciones:** El usuario tiene una cuenta activa y conoce sus credenciales.
-- **Post Condiciones:** El usuario tiene una sesión activa y acceso a las funcionalidades de su rol.
-- **Caso de uso del sistema:** `<Iniciar Sesión>`
-
-➤ **Actividad:** Actualizar Información de Perfil.
-
-- **Origen:** Un usuario con sesión iniciada decide modificar sus datos.
-- **Agente:** Usuario.
-- **Precondiciones:** El usuario tiene una sesión activa.
-- **Post Condiciones:** Los datos del perfil del usuario han sido actualizados en la base de datos.
-- **Caso de uso del sistema:** `<Actualizar Perfil>`
-
-### Modelo de caso de uso inicial para el proceso: Gestionar Cuenta de Usuario
-
-### Modelo de objetos del negocio del proceso de objetos: Gestionar Cuenta de Usuario
+### Modelo de objetos del negocio del proceso de objetos: Gestión del Servicio de Reparación
 
 ---
 
 ## Especificación de Caso de Uso del Negocio
 
-## **Consultar Historial de Actividad**
+## Consultar Historial de Actividad
 
 ---
 
@@ -421,83 +379,127 @@ Este CUN describe cómo una persona se registra en Fixceler, eligiendo ser Clien
 
 ---
 
-### Especificación de Caso de Uso del Negocio Consultar Historial de Actividad
+### **Especificación de Caso de Uso del Negocio: Gestión de Registro de Reparador**
 
-#### 1. Introducción
+### **1. Introducción**
 
-El presente trabajo estudia la evaluación del proceso de negocio consultar historial de actividad en la cual se encuentran involucrados el cliente, el reparador y el sistema Fixceler.
+El presente trabajo estudia la evaluación del proceso de negocio de **Gestión de Registro de Reparador**, en la cual se encuentra involucrado el Reparador como actor externo y el Asistente de Operaciones como trabajador responsable del proceso.
 
-#### **1.1 Propósito**
+#### **1.1. Propósito**
+Documentar el proceso manual mediante el cual se incorpora a un nuevo profesional técnico a la red de contactos de Fixceler, habilitándolo para ser considerado en futuras asignaciones de servicios.
 
-Establecer el proceso de negocio que permite a los usuarios de Fixceler (tanto Clientes como Reparadores) acceder y revisar un registro de todos los servicios en los que han participado. El objetivo es proporcionar transparencia, un medio de consulta y un registro personal de la actividad en la plataforma.
+#### **1.2. Alcance**
+El caso de uso comienza cuando un profesional técnico expresa su interés en trabajar con la empresa y finaliza cuando sus datos han sido validados y registrados formalmente en la hoja de cálculo de "Reparadores".
 
-#### **1.2 Alcance**
+#### **1.3. Definiciones, Acrónimos y Abreviaciones**
+Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas en el Glosario al final de este documento.
 
-El caso de uso comienza cuando un usuario con sesión iniciada decide consultar su historial de servicios. El proceso cubre la solicitud y la presentación de una lista de servicios pasados. Termina cuando el usuario ha visualizado su historial.
+#### **1.4. Referencias**
 
-#### **1.3 Definiciones, Acrónimos y Abreviaciones**
+- Entrevistas con el Gerente General de Fixceler.
 
-Ver el glosario de términos del proyecto Fixceler.
+### **2. Descripción Breve**
 
-#### **1.4 Referencias**
-
-La información para la elaboración de este CUN se ha extraído del documento de procesos "Solicitar historial de servicios" y del script de la base de datos proporcionado.
-
-### **2. Consultar Historial de Actividad**
-
-#### **2.1 Descripción Breve**
-
-Este CUN describe cómo un usuario solicita a la plataforma que le muestre un listado de los servicios que ha contratado (si es Cliente) o realizado (si es Reparador). El sistema presenta un resumen de cada servicio pasado, permitiendo al usuario mantener un control sobre su actividad histórica.
+Este CUN describe el proceso de "onboarding" manual de nuevos reparadores. El Asistente de Operaciones (AO) recibe el contacto de un aspirante, realiza una validación informal, solicita la información necesaria y lo registra en una base de datos de Excel para incluirlo en la red de profesionales disponibles.
 
 ### **3. Flujo de trabajo básico**
 
-1. El caso de uso comienza cuando un **Usuario** (Cliente o Reparador) con una sesión activa, selecciona la opción para ver su "Historial de Servicios".
-2. El **Sistema Fixceler** recibe la solicitud y busca en la base de datos todas las solicitudes (`solicitud`) asociadas al `id_usuario` que tengan un estado final (ej. "Completada", "Cancelada").
-3. El **Sistema Fixceler** presenta al usuario una lista de los servicios encontrados, mostrando información clave de cada uno (descripción, fecha, monto, la otra parte involucrada).
-4. El CUN finaliza.
+1. Un aspirante a **Reparador** contacta a la empresa (usualmente por recomendación o llamada directa) para ofrecer sus servicios.
+2. El **Asistente de Operaciones (AO)** recibe el contacto y agenda o realiza en el momento una breve entrevista telefónica.
+3. Durante la entrevista, el AO valida las especialidades del aspirante, su experiencia general y su zona de cobertura principal.
+4. Si el AO considera que el perfil es adecuado para el negocio, decide aceptarlo en la red.
+5. El AO solicita al Reparador sus datos completos: nombre, DNI, teléfono y una lista detallada de sus especialidades.
+6. El AO abre la hoja de cálculo "Reparadores".
+7. El AO añade una nueva fila con toda la información proporcionada por el nuevo reparador.
+8. El AO asigna un estado inicial de "Disponible" en la columna de estado correspondiente.
+9. El CUN finaliza exitosamente.
 
 ### **4. Flujos de trabajo alternativos**
 
-#### **4.1. Historial Vacío**
-
-- En el paso 3 del flujo básico, si el **Sistema Fixceler** no encuentra ningún servicio pasado asociado al usuario, en lugar de una lista, muestra un mensaje indicando que no existen registros en su historial.
+#### **4.1. Reparador no califica:** 
+En el paso 4, si el AO determina que el reparador no cumple con los requisitos mínimos (ej. no tiene una especialidad demandada, no genera confianza), le agradece su tiempo y le informa que no pueden incorporarlo en este momento. El CUN finaliza sin éxito.
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:**
-- Cliente
-- Reparador
-  (Ambos actúan en el rol de "Usuario")
-- **Trabajadores del Negocio:**
-- Sistema Fixceler
+- **Actor:** Reparador (el aspirante).
+- **Trabajador del Negocio:** Asistente de Operaciones (AO).
 
-### **Diagrama de Proceso de Negocio (BPM)**
+### **Diagrama de roles del caso de uso: Gestión de Registro de Reparador**
 
-*[Placeholder para el diagrama BPM del proceso que será insertado por el equipo de desarrollo.]*
+*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+
+### **Acciones necesarias para realizar el proceso de negocio**
+
+➤ **Reparador**
+
+- Contactar a la empresa para ofrecer sus servicios.
+- Proporcionar información sobre su experiencia y especialidades.
+- Entregar sus datos personales y de contacto.
+
+➤ **Asistente de Operaciones**
+
+- Recibir y atender el contacto del aspirante.
+- Realizar una entrevista de validación informal.
+- Tomar la decisión de aceptar o rechazar al aspirante.
+- Registrar los datos del nuevo reparador en la hoja de cálculo.
+
+### **Diagrama de Actividad**
+
+*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+
+### **Lista de actividades a automatizar**
+
+- Un formulario de registro en línea para que los reparadores se postulen.
+- Creación automática de un perfil de reparador en la base de datos del sistema.
+- Un panel de control para que el reparador pueda gestionar él mismo sus especialidades, certificados y zonas de cobertura.
+- Un proceso de aprobación de nuevos reparadores para el administrador del sistema.
 
 ### **Listado de entidades del proceso del negocio**
 
-- Servicio Pasado (representado por la entidad `Solicitud`)
-- Calificación
+- Reparador (fila en Excel).
+- Especialidad (texto en una celda).
+- Acuerdo de Afiliación (Verbal).
 
-### **Reglas de negocio del proceso del negocio**
+### **Reglas de negocio del proceso de negocio: (Gestión de Registro de Reparador)**
 
-➤ **Objeto de información: Servicio Pasado** (Basado en la tabla `solicitud`)
+➤ **Objeto de información: Reparador**
 
-- **Atributos:** ID de Solicitud, Descripción, Fecha de finalización, Monto final, ID del Cliente, ID del Reparador, Estado final.
-- **Restricciones:**
-- Un usuario solo puede ver los servicios en los que participó directamente.
-- La lista del historial solo debe mostrar servicios con un estado terminal ("Completada" , "Cancelada por cliente" , "Cancelada por sistema", etc.).
+- **Atributos**
+  - Nombre Completo
+  - DNI
+  - Teléfono de Contacto
+  - Lista de Especialidades (texto)
+  - Estado (Disponible / No Disponible)
+- **Restricciones**
+  - El DNI debe ser único en la lista de reparadores para evitar duplicados.
+  - Un reparador debe tener al menos una especialidad definida.
 
-### Modelo de caso de uso inicial para el proceso: Gestionar Cuenta de Usuario
+### **Detalle de Actividades del Proceso**
 
-### Modelo de objetos del negocio del proceso de objetos: Gestionar Cuenta de Usuario
+➤ **Actividad:** Validar Nuevo Reparador.
+
+- **Origen:** Contacto inicial de un aspirante a reparador.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** Un profesional técnico ha expresado interés en unirse a la red.
+- **Post Condiciones:** Se ha tomado la decisión de aceptar o rechazar al aspirante.
+
+➤ **Actividad:** Registrar Datos de Reparador.
+
+- **Origen:** La decisión de aceptar a un nuevo reparador.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** El reparador ha sido validado informalmente.
+- **Post Condiciones:** Los datos del reparador están registrados en la hoja de cálculo y su estado inicial es "Disponible".
+- **Caso de uso del sistema:** `<Crear Perfil de Reparador>`
+
+### Modelo de caso de uso inicial para el proceso: Gestión de Registro de Reparador
+
+### Modelo de objetos del negocio del proceso de objetos: Gestión de Registro de Reparador
 
 ---
 
 ## Especificación de Caso de Uso del Negocio
 
-## **Gestionar Reclamos y Quejas**
+## Gestionar Reclamos y Quejas
 
 ---
 
@@ -509,94 +511,135 @@ Este CUN describe cómo un usuario solicita a la plataforma que le muestre un li
 
 ---
 
-### Especificación de Caso de Uso del Negocio Gestionar Reclamos y Quejas
+### **Especificación de Caso de Uso del Negocio: Gestión de Atención al Cliente**
 
-#### 1. Introducción
+### **1. Introducción**
 
-El presente trabajo estudia la evaluación del proceso de negocio gestionar reclamos y quejas en la cual se encuentran involucrados el cliente, el reparador y el sistema Fixceler.
+El presente trabajo estudia la evaluación del proceso de negocio de **Gestión de Atención al Cliente**, en la cual se encuentran involucrados los Usuarios (Clientes o Reparadores) como actores externos y el Asistente de Operaciones como trabajador responsable de la mediación.
 
-#### **1.1 Propósito**
+#### **1.1. Propósito**
+Documentar el proceso manual y reactivo mediante el cual la empresa maneja y resuelve las quejas, problemas o inconformidades reportadas por los usuarios con respecto a un servicio realizado.
 
-Establecer un proceso de negocio simple y automatizado para la gestión de reclamos y quejas presentadas por los usuarios. El objetivo es ofrecer un canal formal para expresar inconformidades y que el sistema aplique una resolución basada en reglas de manera rápida y consistente.
+#### **1.2. Alcance**
+El caso de uso comienza cuando un Usuario (Cliente o Reparador) llama a la empresa para presentar una queja formal sobre un servicio. El proceso cubre el registro de la queja, la mediación del Asistente de Operaciones (AO) y finaliza cuando el AO comunica una resolución a las partes involucradas.
 
-#### **1.2 Alcance**
+#### **1.3. Definiciones, Acrónimos y Abreviaciones**
+Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas en el Glosario al final de este documento.
 
-El caso de uso comienza cuando un Cliente o un Reparador inicia un reclamo sobre un servicio específico. El proceso cubre el registro y el procesamiento automático del reclamo. Termina cuando el sistema ha tomado una decisión y ha notificado a las partes.
+#### **1.4. Referencias**
 
-#### **1.3 Definiciones, Acrónimos y Abreviaciones**
+- Entrevistas con el Gerente General de Fixceler.
 
-Ver el glosario de términos del proyecto Fixceler.
+### **2. Descripción Breve**
 
-#### **1.4 Referencias**
-
-Este CUN fue definido durante las sesiones de análisis del modelo de negocio, basado en la necesidad de un sistema de "atención al cliente" automatizado.
-
-### **2. Gestionar Reclamos y Quejas**
-
-#### **2.1 Descripción Breve**
-
-Este CUN describe cómo el Sistema Fixceler gestiona los reclamos o quejas. Un usuario registra su inconformidad sobre un servicio, el sistema la procesa aplicando un conjunto de reglas de negocio y ejecuta una resolución, que puede incluir una sanción a una de las partes.
+Este CUN describe el proceso de resolución de conflictos de Fixceler. Cuando surge un problema, el Asistente de Operaciones (AO) actúa como un mediador central. Recibe la queja por teléfono, contacta a la otra parte para obtener su versión, y toma una decisión final basada en su criterio para solucionar el incidente.
 
 ### **3. Flujo de trabajo básico**
 
-1. El caso de uso comienza cuando un **Usuario** (Cliente o Reparador) selecciona un contrato de su historial y elige la opción "Registrar Reclamo o Queja".
-2. El usuario selecciona un **motivo predefinido** para su reclamo.
-3. El **Sistema Fixceler** recibe y registra el reclamo, asociándolo al contrato correspondiente.
-4. El sistema recopila automáticamente los datos asociados a dicho contrato.
-5. El sistema **aplica las Reglas de Negocio de Resolución** para determinar el resultado.
-6. Basado en el resultado, el **Sistema Fixceler** ejecuta una resolución: cierra el reclamo y, si es necesario, registra una **Sanción** en la cuenta del usuario infractor.
-7. El sistema notifica a ambas partes sobre el resultado del reclamo.
+1. Un **Usuario** (sea Cliente o Reparador) llama por teléfono al **Asistente de Operaciones (AO)** para presentar una queja sobre un servicio específico.
+2. El AO escucha al usuario, busca el registro del servicio en la hoja de cálculo "Servicios" y anota los detalles de la queja en una columna de "Notas".
+3. El AO le informa al Usuario que investigará el caso y que se pondrá en contacto con él más tarde.
+4. El AO llama a la otra parte involucrada en el servicio para obtener su versión de los hechos.
+5. Con la información de ambas partes, el AO evalúa la situación y toma una decisión final basada en su criterio (ej. gestionar una visita de corrección, anular el costo, vetar a uno de los usuarios para futuros servicios).
+6. El AO anota la resolución en la hoja de cálculo. Si la decisión es vetar a un usuario, lo marca como "baneado" en la lista correspondiente ("Clientes" o "Reparadores").
+7. El AO llama a ambas partes por separado para comunicarles la decisión final tomada por la empresa.
 8. El CUN finaliza.
 
 ### **4. Flujos de trabajo alternativos**
 
-#### **4.1. Reclamo Inválido**
-
-- En el paso 1, si el contrato seleccionado no es elegible para un reclamo (ej. es muy antiguo), el sistema informa al usuario que no puede iniciar el proceso y el CUN finaliza.
+#### **4.1. No se puede contactar a la otra parte:** 
+Si el AO intenta llamar a la otra parte involucrada varias veces sin éxito, debe tomar una decisión basándose únicamente en la información proporcionada por quien presentó la queja y los registros existentes.
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:** Cliente, Reparador
-- **Trabajadores del Negocio:** Sistema Fixceler
+- **Actores:** Cliente, Reparador (ambos como "Usuario").
+- **Trabajador del Negocio:** Asistente de Operaciones (AO).
 
-### **Diagrama de Proceso de Negocio (BPM)**
+### **Diagrama de roles del caso de uso: Gestión de Atención al Cliente**
 
-*[Placeholder para el diagrama BPM del proceso que será insertado por el equipo de desarrollo.]*
+*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+
+### **Acciones necesarias para realizar el proceso de negocio**
+
+➤ **Usuario (Cliente o Reparador)**
+
+- Llamar a la empresa para presentar una queja.
+- Explicar detalladamente la situación.
+- Atender la llamada del AO con la resolución.
+
+➤ **Asistente de Operaciones**
+
+- Recibir y registrar la queja.
+- Contactar a la contraparte para investigar.
+- Mediar y tomar una decisión final.
+- Registrar la resolución y posibles sanciones.
+- Comunicar la decisión a ambas partes.
+
+### **Diagrama de Actividad**
+
+*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+
+### **Lista de actividades a automatizar**
+
+- Un sistema de tickets digital para que los usuarios registren y hagan seguimiento de sus quejas formalmente.
+- Un flujo de trabajo digital para la gestión de casos.
+- Un sistema de mensajería interna para facilitar la comunicación entre las partes y el administrador.
+- Registro formal y automático de resoluciones y sanciones en el perfil del usuario.
 
 ### **Listado de entidades del proceso del negocio**
 
-- Reclamo o Queja
-- Contrato de Servicio (`Solicitud`)
-- Sanción
+- Queja/Reclamo (Nota en Excel).
+- Servicio (Fila en Excel).
+- Resolución (Decisión verbal y nota en Excel).
+- Registro de Sanción (Marca en la lista de contactos).
 
-### **Reglas de negocio del proceso de negocio**
+### **Reglas de negocio del proceso de negocio: (Gestión de Atención al Cliente)**
 
-➤ **Objeto de información: Reclamo o Queja**
+➤ **Objeto de información: Queja**
 
-- **Atributos:** ID de Reclamo (único), ID de Contrato, Usuario iniciador, Motivo, Fecha, Estado (Abierto, Cerrado), Resolución.
-- **Restricciones:** Un reclamo se asocia a un contrato, pero no altera el estado de dicho contrato. Solo se permite un reclamo por contrato.
+- **Atributos**
+  - ID del Servicio asociado.
+  - Descripción del problema.
+  - Usuario reclamante.
+  - Fecha del reclamo.
+  - Resolución.
+- **Restricciones**
+  - Una queja debe estar asociada a un servicio existente.
 
 ➤ **Objeto de información: Sanción**
 
-- **Atributos:** ID de Usuario, Tipo de Estado (Suspendido, Inhabilitado), Fecha, Motivo.
-- **Restricciones:** La aplicación de una sanción es una posible resolución de un reclamo y se rige por las reglas de resolución y las reglas generales de acumulación de sanciones (RN-SAN).
+- **Atributos**
+  - Motivo (ej. "Queja del cliente por mal servicio").
+  - Estado resultante ("Baneado", "En observación").
+- **Restricciones**
+  - La decisión de sancionar a un usuario es potestad del AO.
+
+### **Detalle de Actividades del Proceso**
+
+➤ **Actividad:** Registrar Queja.
+
+- **Origen:** Llamada de un Usuario para reportar un problema.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** Se está ejecutando o se ha completado un servicio.
+- **Post Condiciones:** La queja ha sido registrada como una nota en la hoja de cálculo.
+
+➤ **Actividad:** Investigar y Mediar Conflicto.
+
+- **Origen:** Una queja ha sido registrada.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** El AO tiene la versión de una de las partes.
+- **Post Condiciones:** El AO tiene la versión de ambas partes y ha evaluado la situación.
+
+➤ **Actividad:** Tomar y Comunicar Resolución.
+
+- **Origen:** La mediación ha concluido.
+- **Agente:** Asistente de Operaciones.
+- **Precondiciones:** El AO ha tomado una decisión final.
+- **Post Condiciones:** La resolución ha sido registrada y comunicada a los involucrados.
+- **Caso de uso del sistema:** `<Gestionar Reclamo>`
+
+### Modelo de caso de uso inicial para el proceso: Gestión de Atención al Cliente
+
+### Modelo de objetos del negocio del proceso de objetos: Gestión de Atención al Cliente
 
 ---
-
-➤ **Detalle de Actividades del Proceso**
-
-➤ **Actividad:** Registrar Reclamo o Queja.
-
-- **Origen:** Inconformidad de un usuario con un servicio.
-- **Agente:** Usuario (Cliente o Reparador).
-- **Precondiciones:** Existe un contrato elegible sobre el cual reclamar.
-- **Post Condiciones:** Se ha registrado un reclamo formal en el sistema, asociado al contrato correspondiente.
-- **Caso de uso del sistema:** `<Registrar Reclamo>`
-
-➤ **Actividad:** Procesar Reclamo o Queja.
-
-- **Origen:** Se ha registrado un nuevo reclamo.
-- **Agente:** Sistema Fixceler.
-- **Precondiciones:** Un reclamo se encuentra en estado "Abierto".
-- **Post Condiciones:** El reclamo ha sido cerrado, se ha ejecutado una resolución y las partes han sido notificadas.
-- **Caso de uso del sistema:** `<Procesar Reclamo>`
