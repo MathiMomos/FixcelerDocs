@@ -5,6 +5,7 @@ description: Descripción detallada del modelo de casos de uso del negocio de Fi
 
 ### **Agentes del negocio**
 
+- **Usuario:** Es la persona o entidad que utiliza la plataforma Fixceler para solicitar servicios de reparación a domicilio. Puede ser un Cliente o un Reparador.
 - **Cliente:** Es la persona o entidad externa que contacta a Fixceler para solicitar un servicio de reparación a domicilio. Es el iniciador del flujo de servicio.
 - **Reparador:** Es el profesional técnico externo que se afilia a la red de Fixceler para ser asignado a servicios de reparación. Es responsable de la ejecución técnica del trabajo.
 
@@ -15,27 +16,9 @@ description: Descripción detallada del modelo de casos de uso del negocio de Fi
 ---
 
 ### **Casos de uso del negocio**
+#### **Diagrama de Casos de Uso**
 
-A continuación, se presentan los Casos de Uso del Negocio (CUN) que describen los procesos principales del modelo operativo manual de Fixceler:
-
-1. **Gestión de Solicitud de Servicio**
-2. **Gestión del Servicio de Reparación**
-3. **Gestión de Registro de Reparador**
-4. **Gestión de Atención al Cliente**
-
-### **Diagrama de Casos de Uso**
-
-El diagrama de casos de uso muestra la interacción entre los actores externos y los procesos de negocio:
-
-- El **Cliente** participa en:
-  - `Gestión de Solicitud de Servicio` (lo inicia).
-  - `Gestión del Servicio de Reparación`.
-  - `Gestión de Atención al Cliente`.
-- El **Reparador** participa en:
-  - `Gestión de Registro de Reparador` (lo inicia).
-  - `Gestión de Solicitud de Servicio`.
-  - `Gestión del Servicio de Reparación`.
-  - `Gestión de Atención al Cliente`.
+![img.png](img.png)
 
 ---
 
@@ -94,12 +77,11 @@ Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien a
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:** Cliente, Reparador.
-- **Trabajador del Negocio:** Asistente de Operaciones (AO).
+![img_1.png](img_1.png)
 
 ### **Diagrama de roles del caso de uso: Gestión de Solicitud de Servicio**
 
-*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
@@ -220,15 +202,19 @@ Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien a
 ### **Especificación de Caso de Uso del Negocio: Gestión del Servicio de Reparación**
 
 ### **1. Introducción**
+
 El presente trabajo estudia la evaluación del proceso de negocio de **Gestión del Servicio de Reparación**, en la cual se encuentran involucrados el Cliente y el Reparador como actores principales, y el Asistente de Operaciones como trabajador de soporte y control.
 
 #### **1.1. Propósito**
+
 Documentar el proceso manual de ejecución, formalización, cierre y liquidación de un servicio de reparación que ya ha sido previamente asignado.
 
 #### **1.2. Alcance**
-El caso de uso comienza cuando el Reparador inicia su desplazamiento hacia el domicilio del Cliente. Cubre la firma del contrato físico, la ejecución del trabajo, el pago directo del Cliente al Reparador, el reporte de finalización al Asistente de Operaciones (AO) y la posterior liquidación de la comisión.
+
+El caso de uso comienza cuando el Reparador inicia su desplazamiento hacia el domicilio del Cliente. Cubre la firma del contrato físico, la ejecución del trabajo, el pago directo del Cliente al Reparador, el reporte de finalización y la posterior liquidación de la comisión.
 
 #### **1.3. Definiciones, Acrónimos y Abreviaciones**
+
 Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas en el Glosario al final de este documento.
 
 #### **1.4. Referencias**
@@ -238,7 +224,7 @@ Las definiciones, acrónimos y abreviaturas utilizadas se encuentran detalladas 
 
 ### **2. Descripción Breve**
 
-Este CUN describe la fase de ejecución del servicio. Una vez notificado, el Reparador se dirige al domicilio del cliente, formaliza el acuerdo mediante un contrato físico, realiza el trabajo, cobra directamente el monto total y finalmente reporta la finalización al AO para el registro y posterior liquidación de la comisión de la empresa.
+Este CUN describe la fase de ejecución del servicio. Una vez notificado, el Reparador se dirige al domicilio del cliente, formaliza el acuerdo mediante un contrato físico, realiza el trabajo y cobra directamente el monto total. El cierre se formaliza a través de un proceso de doble confirmación gestionado por el Asistente de Operaciones (AO).
 
 ### **3. Flujo de trabajo básico**
 
@@ -247,13 +233,12 @@ Este CUN describe la fase de ejecución del servicio. Una vez notificado, el Rep
 3. El Reparador realiza el trabajo de reparación.
 4. Al finalizar, el Reparador informa al Cliente el costo total (que debe coincidir con el del contrato).
 5. El **Cliente** paga el 100% del monto directamente al **Reparador** (en efectivo o por billetera digital).
-6. El **Reparador** llama por teléfono al **Asistente de Operaciones (AO)** para reportar la finalización del servicio y el costo final cobrado.
-7. El AO actualiza la hoja de cálculo de "Servicios", marcando el servicio como "Completado" y anotando el costo final.
-8. El AO actualiza el estado del Reparador a "Disponible" en la hoja de cálculo de "Reparadores".
-9. En un día fijo de la semana (ej. viernes), el **Reparador** se acerca a la oficina.
-10. El AO y el Reparador revisan los servicios de la semana en la hoja de cálculo y calculan la comisión total a pagar a la empresa.
-11. El Reparador entrega el monto de la comisión.
-12. El CUN finaliza exitosamente.
+6. El **Reparador** llama por teléfono al **Asistente de Operaciones (AO)**, se identifica con el número de servicio y reporta: "Servicio finalizado, monto cobrado S/X".
+7. El **AO** llama al **Cliente** para verificar: "Le llamo para confirmar que el servicio con [Nombre del Reparador] ha sido completado satisfactoriamente". El Cliente da su confirmación.
+8. Con ambas confirmaciones, el AO actualiza la hoja de cálculo de "Servicios", marcando el servicio como "Completado y Pagado" y anotando el costo final.
+9. El AO actualiza el estado del Reparador a "Disponible" en la hoja de cálculo de "Reparadores".
+10. En un día fijo de la semana (ej. viernes), el **Reparador** se acerca a la oficina para liquidar su comisión.
+11. El CUN finaliza exitosamente.
 
 ### **4. Flujos de trabajo alternativos**
 
@@ -262,12 +247,11 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:** Cliente, Reparador.
-- **Trabajador del Negocio:** Asistente de Operaciones (AO).
+![img_1.png](img_1.png)
 
 ### **Diagrama de roles del caso de uso: Gestión del Servicio de Reparación**
 
-*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+![img_3.png](img_3.png)
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
@@ -279,16 +263,14 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 - Cobrar el pago directamente del Cliente.
 - Reportar la finalización y el costo al AO.
 - Liquidar comisiones semanalmente.
-  
-➤ **Cliente**
-
+  ➤ **Cliente**
 - Recibir al Reparador.
 - Firmar el contrato de servicio.
 - Realizar el pago del servicio.
-  
-➤ **Asistente de Operaciones**
-
+- Confirmar la finalización del servicio al AO por teléfono.
+  ➤ **Asistente de Operaciones**
 - Recibir el reporte de cierre del Reparador.
+- Realizar la llamada de confirmación al Cliente.
 - Actualizar los registros en las hojas de cálculo.
 - Gestionar la liquidación de comisiones.
 
@@ -300,15 +282,15 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 
 - Notificación automática al cliente cuando el reparador está "en camino".
 - Generación de un contrato virtual con aceptación digital.
-- Registro de pagos y costos en la plataforma.
+- Sistema de confirmación de finalización y pago en la plataforma.
 - Cálculo automático de comisiones por servicio y por periodo.
-- Sistema de liquidación y transferencia de pagos a través de la plataforma.
 
 ### **Listado de entidades del proceso del negocio**
 
 - Contrato de Servicio (documento físico).
 - Pago (transacción externa).
 - Reporte de Cierre (llamada telefónica).
+- Confirmación de Cliente (llamada telefónica).
 - Liquidación de Comisión (registro manual).
 
 ### **Reglas de negocio del proceso de negocio: (Gestión del Servicio de Reparación)**
@@ -324,40 +306,30 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 - **Restricciones**
   - El trabajo de reparación no debe comenzar hasta que el contrato esté firmado por ambas partes.
 
-➤ **Objeto de información: Liquidación de Comisión**
+➤ **Objeto de información: Cierre de Servicio**
 
 - **Atributos**
-  - Periodo de liquidación (ej. Semana del 20 al 26 de junio).
-  - Lista de servicios completados.
-  - Monto total de los servicios.
-  - Porcentaje de comisión.
-  - Monto final de la comisión a pagar.
+  - Confirmación del Reparador (Sí/No).
+  - Confirmación del Cliente (Sí/No).
+  - Monto final reportado.
 - **Restricciones**
-  - La liquidación se realiza en una fecha y lugar acordados.
-  - El cálculo se basa en los montos reportados por el reparador y registrados por el AO.
+  - Un servicio solo se puede marcar como "Completado" en el registro si se tienen las confirmaciones de ambas partes (la del reparador y la del cliente al AO).
 
 ### **Detalle de Actividades del Proceso**
 
-➤ **Actividad:** Formalizar Contrato Físico.
+➤ **Actividad:** Formalizar y Ejecutar Servicio.
 
-- **Origen:** El reparador llega al domicilio del cliente.
+- **Origen:** El reparador ha sido asignado y se dirige al domicilio.
 - **Agente:** Reparador, Cliente.
-- **Precondiciones:** El reparador ha sido asignado y conoce los términos del servicio.
-- **Post Condiciones:** Existe un acuerdo físico y firmado que autoriza el inicio del trabajo.
+- **Precondiciones:** La asignación ha sido confirmada a ambas partes.
+- **Post Condiciones:** El trabajo de reparación ha sido realizado y el pago ha sido efectuado directamente al reparador.
 
-➤ **Actividad:** Ejecutar Servicio y Gestionar Pago.
+➤ **Actividad:** Confirmar y Cerrar Servicio.
 
-- **Origen:** El contrato ha sido firmado.
-- **Agente:** Reparador, Cliente.
-- **Precondiciones:** Existe un contrato firmado.
-- **Post Condiciones:** El trabajo de reparación ha sido realizado y el reparador ha recibido el pago completo por parte del cliente.
-
-➤ **Actividad:** Reportar Cierre y Liquidar Comisión.
-
-- **Origen:** El servicio ha sido pagado.
-- **Agente:** Reparador, Asistente de Operaciones.
-- **Precondiciones:** El reparador ha finalizado su labor en el domicilio.
-- **Post Condiciones:** El AO ha actualizado los registros y la comisión ha sido entregada a la empresa.
+- **Origen:** El servicio ha sido pagado en el domicilio.
+- **Agente:** Reparador, Cliente, Asistente de Operaciones.
+- **Precondiciones:** El reparador ha finalizado su labor y recibido el pago.
+- **Post Condiciones:** El AO ha recibido la confirmación de ambas partes y ha actualizado el estado del servicio a "Completado" en sus registros.
 
 ### Modelo de caso de uso inicial para el proceso: Gestión del Servicio de Reparación
 
@@ -421,12 +393,11 @@ En el paso 4, si el AO determina que el reparador no cumple con los requisitos m
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actor:** Reparador (el aspirante).
-- **Trabajador del Negocio:** Asistente de Operaciones (AO).
+![img_2.png](img_2.png)
 
 ### **Diagrama de roles del caso de uso: Gestión de Registro de Reparador**
 
-*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+![img_4.png](img_4.png)
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
@@ -552,12 +523,11 @@ Si el AO intenta llamar a la otra parte involucrada varias veces sin éxito, deb
 
 ### **Agentes implicados en el proceso de negocio**
 
-- **Actores:** Cliente, Reparador (ambos como "Usuario").
-- **Trabajador del Negocio:** Asistente de Operaciones (AO).
+![img_1.png](img_1.png)
 
 ### **Diagrama de roles del caso de uso: Gestión de Atención al Cliente**
 
-*[Placeholder para el diagrama de roles que será insertado por el equipo.]*
+![img_5.png](img_5.png)
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
