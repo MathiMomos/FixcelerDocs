@@ -174,15 +174,15 @@ La dirección de Fixceler ha aprobado el desarrollo del proyecto y se ha comprom
 
 #### **12.1 Estándares**
 
-- Uso de base de datos MySQL.
-- Uso de lenguaje de programación JavaScript con Node.js y React.js.
+- Uso de motor de base de datos MySQL y DataGrip para interacción.
+- Uso de lenguaje de programación JavaScript con Node.js y React.js y Dart con Flutter.
 - Uso de Bizagi Process Modeler para el modelado de procesos.
 - Uso de un sistema operativo Libre (Ubuntu) o licenciado (Windows 10/11) para el desarrollo.
 
 #### **12.2 Requerimientos de la Implementación**
 
 - **Equipo de desarrollo:** Equipos con al menos 8GB de RAM, procesador i5 o equivalente, SSD.
-- **Software de desarrollo:** IDEs (VS Code, WebStorm), Git, Node.js, Cliente MySQL, Postman/Insomnia.
+- **Software de desarrollo:** IDEs (VS Code, WebStorm, DataGrip), Git, Cliente MySQL.
 
 #### **12.3 Requerimientos de Rendimiento**
 
