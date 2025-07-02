@@ -7,107 +7,98 @@ description: Descripción detallada del modelo de requisitos del módulo de IA p
 
 ### 3.1. Requisitos funcionales
 
-A continuación, se especifican los requisitos funcionales, derivados de los Casos de Uso del Sistema.
+A continuación, se especifican las funcionalidades principales del sistema.
 
 #### 3.1.1 PROCESO DE NEGOCIO: GESTIONAR CONTRATACIÓN DE SERVICIO
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| **RF-01** | Búsqueda y Filtro de Reparadores | El sistema debe permitir al Cliente buscar reparadores. La búsqueda debe poder filtrarse por especialidad, ubicación, disponibilidad y calificación promedio. | Alta |
-| **RF-02** | Visualización de Perfil Público | El sistema debe permitir al Cliente visualizar el perfil público y detallado de un reparador, incluyendo su información, especialidades, certificados y reseñas. | Alta |
-| **RF-03** | Envío de Solicitud de Servicio | El sistema debe permitir a un Cliente enviar una solicitud de servicio a un reparador, especificando la descripción del trabajo y un monto (opcional). | Alta |
-| **RF-04** | Gestión de Solicitudes (Reparador) | El sistema debe presentar al Reparador un listado de solicitudes recibidas, permitiéndole aceptarlas, rechazarlas con un motivo o iniciar una negociación. | Alta |
-| **RF-05** | Negociación de Precio | El sistema debe facilitar un flujo de intercambio de contraofertas entre el Cliente y el Reparador hasta que se alcance un acuerdo. | Alta |
-| **RF-06** | Creación de Contrato Virtual | Tras un acuerdo, el sistema debe generar un contrato virtual que resuma los términos del servicio para la aceptación de ambas partes. | Alta |
-| **RF-07** | Cancelación de Contrato | El sistema debe permitir que el Cliente o el Reparador cancelen un contrato activo, registrando el motivo y aplicando las reglas de sanción. | Media |
-| **RF-08** | Seguimiento de Ubicación | El sistema debe mostrar al Cliente, en un mapa, la ubicación en tiempo real del Reparador cuando este se encuentre en camino. | Alta |
-| **RF-09** | Confirmación de Finalización | El sistema debe permitir que ambas partes confirmen, de forma mutua, que el servicio ha sido completado. | Alta |
-| **RF-10** | Confirmación de Pago | El sistema debe tener una función para que el Cliente marque el servicio como "Pagado" y el Reparador lo marque como "Cobrado". | Alta |
-| **RF-11** | Calificación de Servicio (Mutua) | Tras completarse un servicio, el sistema debe permitir al Cliente y al Reparador calificarse mutuamente (estrellas y comentario). | Alta |
-| **RF-12** | Notificaciones de Estado | El sistema debe enviar notificaciones automáticas (por email o push) a los usuarios sobre los cambios de estado importantes de una solicitud (ej. nueva oferta, servicio finalizado). | Alta |
-
-**MODELO DE DOMINIO**
-
-- **Objetos del proceso:** Solicitud de Servicio, Cliente, Reparador, Especialidad, Calificación, Sanción, Contrato, Pago, Notificación.
-- **Asociaciones entre los objetos:** Cliente-crea-Solicitud, Reparador-es asignado a-Solicitud, Solicitud-genera-Contrato, Contrato-registra-Pago, Contrato-genera-Calificación, Contrato-puede generar-Sanción.
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RF-01 | Búsqueda y Filtro de Reparadores | El sistema debe proveer una interfaz para que el Cliente busque reparadores, con opciones para filtrar por especialidad, ubicación y calificación. | Alta |
+| RF-02 | Visualización de Perfil Público | El sistema debe mostrar el perfil público de un reparador, detallando su información, especialidades y reseñas de otros clientes. | Alta |
+| RF-03 | Envío de Solicitud de Servicio | El sistema debe permitir a un Cliente enviar una solicitud formal de servicio a un reparador específico a través de un botón de envío de solicitud.| Alta |
+| RF-04 | Gestión de Solicitudes (Reparador) | El sistema debe presentar al Reparador un listado de solicitudes recibidas, con opciones para aceptarlas, rechazarlas o iniciar una negociación. | Alta |
+| RF-05 | Negociación de Precio | El sistema debe facilitar una interfaz para el intercambio de ofertas de precio entre Cliente y Reparador sobre una solicitud activa. | Alta |
+| RF-06 | Creación de Contrato Virtual | El sistema debe generar un contrato virtual con los términos acordados para que ambas partes lo acepten formalmente. | Alta |
+| RF-07 | Seguimiento de Ubicación en Mapa | El sistema debe mostrar en una interfaz de mapa la ubicación en tiempo real del Reparador durante el trayecto al servicio. | Alta |
+| RF-08 | Notificaciones de Estado | El sistema debe enviar notificaciones automáticas (por email o push) a los usuarios sobre cambios de estado relevantes en sus solicitudes y contratos. | Alta |
 
 #### 3.1.2 PROCESO DE NEGOCIO: GESTIONAR CUENTA DE USUARIO
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| **RF-13** | Registro de Nuevo Usuario | El sistema debe permitir el registro de nuevos usuarios, con roles de Cliente o Reparador, validando la unicidad del email y DNI. | Alta |
-| **RF-14** | Autenticación de Usuario | El sistema debe permitir a un usuario iniciar sesión de forma segura utilizando su correo electrónico y contraseña. | Alta |
-| **RF-15** | Gestión de Perfil Básico | El sistema debe permitir a un usuario modificar su información personal básica (nombres, teléfono, foto de perfil). | Alta |
-| **RF-16** | Gestión de Perfil de Reparador | El sistema debe permitir al Reparador añadir, editar o eliminar sus especialidades y subir documentos de certificación. | Alta |
-| **RF-17** | Gestión de Disponibilidad | El sistema debe permitir al Reparador cambiar su estado entre "Disponible" y "No Disponible". | Alta |
-| **RF-18** | Recuperación de Contraseña | El sistema debe ofrecer una funcionalidad segura para que los usuarios puedan restablecer su contraseña. | Alta |
-| **RF-19** | Cierre de Sesión | El sistema debe permitir a un usuario terminar su sesión de forma segura en todos sus dispositivos. | Media |
-
-**MODELO DE DOMINIO**
-
-- **Objetos del proceso:** Usuario, Cliente, Reparador, Especialidad, Certificado, Estado de Usuario.
-- **Asociaciones entre los objetos:** Cliente-es un-Usuario, Reparador-es un-Usuario, Reparador-posee-Especialidad, Reparador-gestiona-Certificado, Usuario-tiene un-Estado de Usuario.
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RF-09 | Registro de Nuevo Usuario | El sistema debe proveer un formulario para el registro de nuevos usuarios (Clientes o Reparadores). | Alta |
+| RF-10 | Autenticación de Usuario | El sistema debe permitir a un usuario iniciar sesión de forma segura utilizando su correo electrónico y contraseña. | Alta |
+| RF-11 | Gestión de Perfil Básico | El sistema debe permitir a un usuario modificar su información personal básica (nombres, teléfono, foto de perfil) a través de un formulario. | Alta |
+| RF-12 | Gestión de Disponibilidad | El sistema debe permitir al Reparador cambiar su estado de disponibilidad a través de un interruptor en su perfil. | Alta |
+| RF-13 | Recuperación de Contraseña | El sistema debe ofrecer una funcionalidad para que los usuarios puedan restablecer su contraseña de forma segura. | Alta |
+| RF-14 | Cierre de Sesión | El sistema debe permitir a un usuario terminar su sesión activa de forma segura. | Media |
 
 #### 3.1.3 PROCESO DE NEGOCIO: CONSULTAR HISTORIAL DE ACTIVIDAD
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| **RF-20** | Consulta de Historial de Servicios | El sistema debe permitir a un usuario ver una lista cronológica de todos los servicios pasados en los que ha participado. | Alta |
-| **RF-21** | Detalle de Servicio Pasado | El sistema debe permitir al usuario ver los detalles completos de un servicio de su historial, incluyendo monto, fechas, reparador/cliente y calificaciones otorgadas. | Media |
-| **RF-22** | Filtro de Historial | El sistema debe permitir filtrar el historial de servicios por rango de fechas o por estado (Completado, Cancelado). | Baja |
-
-**MODELO DE DOMINIO**
-
-- **Objetos del proceso:** Usuario, Solicitud de Servicio (como registro histórico), Calificación.
-- **Asociaciones entre los objetos:** Usuario-participó en-Solicitud de Servicio, Solicitud de Servicio-tiene-Calificación.
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RF-15 | Consulta de Historial de Servicios | El sistema debe mostrar a un usuario una lista cronológica de todos los servicios pasados en los que ha participado. | Alta |
+| RF-16 | Detalle de Servicio Pasado | El sistema debe permitir al usuario ver una pantalla con los detalles completos de un servicio de su historial. | Media |
+| RF-17 | Filtro de Historial | El sistema debe proveer controles en la interfaz para filtrar el historial de servicios por rango de fechas o por estado. | Baja |
 
 #### 3.1.4 PROCESO DE NEGOCIO: GESTIONAR RECLAMOS Y SANCIONES
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| **RF-23** | Registrar Reclamo o Queja | El sistema debe permitir a un usuario iniciar un reclamo sobre un servicio, seleccionando un motivo predefinido y añadiendo una descripción. | Alta |
-| **RF-24** | Procesamiento Automático de Reclamo | El sistema debe analizar el reclamo basado en reglas de negocio y aplicar una resolución automática (ej. registrar advertencia). | Alta |
-| **RF-25** | Notificación de Resolución | El sistema debe notificar a ambas partes sobre el resultado de un reclamo. | Alta |
-| **RF-26** | Visualización de Estado de Cuenta | El sistema debe mostrar al usuario su estado actual (Habilitado, Suspendido, etc.) y un historial de sus sanciones. | Media |
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RF-18 | Registrar Reclamo o Queja | El sistema debe ofrecer un formulario para que un usuario inicie un reclamo sobre un servicio. | Alta |
+| RF-19 | Notificación de Resolución | El sistema debe notificar a ambas partes sobre el resultado de un reclamo. | Alta |
+| RF-20 | Visualización de Estado de Cuenta | El sistema debe mostrar al usuario su estado de cuenta actual (Habilitado, Suspendido, etc.) y su historial de sanciones. | Media |
 
-**MODELO DE DOMINIO**
+### 3.2. Requisitos No Funcionales
 
-- **Objetos del proceso:** Reclamo, Solicitud de Servicio, Usuario, Sanción, Estado de Usuario.
-- **Asociaciones entre los objetos:** Reclamo-se asocia a-Solicitud, Reclamo-es iniciado por-Usuario, Reclamo-puede generar-Sanción.
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RNF-01 | Interoperabilidad con IA | El sistema debe ser capaz de conectarse a la API de Gemini para el análisis y recomendación de servicios. | Alta |
+| RNF-02 | Interoperabilidad con Mapas | El sistema debe poder integrarse con un servicio de mapas externo (API de Google Maps) para visualizar datos de geolocalización. | Alta |
+| RNF-03 | Compatibilidad de Aplicación | La aplicación (Flutter) debe ser compatible con las dos últimas versiones mayores de Android. | Alta |
+| RNF-04 | Cumplimiento Normativo | El tratamiento de datos personales debe cumplir con la Ley de Protección de Datos Personales del Perú (Ley N° 29733), incluyendo la obtención de consentimiento explícito. | Alta |
+| RNF-05 | Manejo de Errores API Externa | El sistema debe manejar los fallos de conexión con las APIs externas (Gemini, Google Maps), informando al usuario que la funcionalidad no está disponible temporalmente sin bloquear la aplicación. | Alta |
+| RNF-06 | Accesibilidad | La interfaz de usuario debe cumplir con las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1 Nivel AA. | Media |
+| RNF-07 | Portabilidad de Datos | El sistema debe proveer una función para que un usuario pueda exportar su información personal y su historial de servicios en formato JSON. | Media |
+| RNF-08 | Mantenibilidad | El código fuente debe estar lógicamente modularizado para que la modificación de un componente no afecte directamente a otro. | Media |
 
-## 3.2. Requisitos No Funcionales
+### 3.3 Requisitos de Dominio
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| RNF-01 | Interoperabilidad con IA | El sistema debe ser capaz de conectarse a un servicio externo de IA para el análisis y recomendación de servicios. | Alta |
-| RNF-02 | Interoperabilidad con Mapas | El sistema debe poder integrarse con un servicio de mapas externo para visualizar datos de geolocalización. | Alta |
-| RNF-03 | Compatibilidad de Sistema | La aplicación web debe ser compatible con las tres últimas versiones de Android. | Alta |
-| RNF-04 | Cumplimiento Normativo | El tratamiento de datos personales debe cumplir con la Ley de Protección de Datos Personales del Perú (Ley N° 29733). | Alta |
-
-## 3.3 Requisitos de Dominio
-
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
 | DD-01 | Unicidad de Calificación | Un servicio solo puede ser calificado una única vez por cada participante. | Alta |
-| DD-02 | Condición de Calificación | La funcionalidad para calificar un servicio se habilita únicamente después de que el servicio es marcado como "Completado". | Alta |
-| DD-03 | Política de Sanciones | Las sanciones por cancelación son acumulativas: 1ª vez=Advertencia, 2ª=Suspensión, 3ª=Inhabilitación. | Alta |
+| DD-02 | Condición de Calificación | La funcionalidad para calificar un servicio se habilita únicamente después de que ambas partes marcan el servicio como “Completado”. | Alta |
+| DD-03 | Política de Sanciones | Las sanciones por cancelación son acumulativas. El contador de sanciones de un usuario se reinicia a cero tras 6 meses sin nuevas sanciones. | Media |
 | DD-04 | Exclusividad de Rol | Un usuario no puede ser Cliente y Reparador simultáneamente con la misma cuenta. | Alta |
+| DD-05 | Caducidad de Oferta | Una oferta o contraoferta en la negociación de precio caducará automáticamente si no es respondida en un plazo de 48 horas. | Media |
+| DD-06 | Límite de Solicitudes | Un Cliente solo puede tener una (1) solicitud de servicio activa (en estado "Pendiente" o "Negociando") simultáneamente. | Alta |
+| DD-07 | Condición de Finalización | Un servicio no puede ser marcado como "Terminado" si el pago no ha sido confirmado por ambas partes (Cliente como "Pagado" y Reparador como "Cobrado"). | Alta |
+| DD-08 | Estado de Contrato Inmutable | Una vez que un contrato es marcado como 'Finalizado' o 'Cancelado', su estado y detalles principales no pueden ser modificados por ninguno de los usuarios. | Alta |
+| DD-09 | Confirmación Mutua de Finalización | El sistema requiere que ambas partes (Cliente y Reparador) confirmen que un servicio ha finalizado para que este se marque como "Completado". | Alta |
+| DD-10 | Confirmación Mutua de Pago | El estado de un servicio se considera "Pagado y Cobrado" solo cuando el Cliente lo marca como "Pagado" y el Reparador lo marca como "Cobrado". | Alta |
+| DD-11 | Gestión de Perfil de Reparador | Solo los usuarios con el rol de "Reparador" pueden añadir, editar o eliminar sus especialidades y certificaciones. | Alta |
+| DD-12 | Procesamiento de Reclamos | El sistema debe analizar un reclamo basado en reglas de negocio predefinidas para aplicar una resolución automática (ej. registrar advertencia). | Alta |
 
-## 3.4 Requisitos de Desarrollo
+### 3.4 Requisitos de Desarrollo
 
-| ID  | Nombre | Especificación                                                                                             | Prioridad |
-| --- | --- |------------------------------------------------------------------------------------------------------------| --- |
-| RD-01 | Metodología | El proyecto se gestionará utilizando la metodología Sashimi.                       | Alta |
-| RD-02 | Stack Tecnológico | El sistema se desarrollará con Dart (Flutter) para la aplicación móvil, JavaScript (Node.js, Express) para el backend, y MySQL y Redis como bases de datos.                        | Alta |
-| RD-03 | Control de Versiones | Todo el código fuente del proyecto se gestionará utilizando Git en un repositorio centralizado (ej. GitHub). | Alta |
-| RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y una API de mapas (ej. Google Maps) para geolocalización.           | Alta |
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RD-01 | Metodología | El proyecto se gestionará utilizando la metodología Sashimi. | Alta |
+| RD-02 | Stack Tecnológico | El sistema se desarrollará con Dart (Flutter), JavaScript (Node.js, Express), MySQL y Redis. | Alta |
+| RD-03 | Control de Versiones | Todo el código fuente del proyecto se gestionará utilizando Git en un repositorio centralizado (GitHub), siguiendo el flujo de trabajo GitFlow. | Alta |
+| RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y la API de Google Maps para geolocalización. | Alta |
+| RD-05 | Entornos de Despliegue | Se deben mantener tres entornos idénticos y aislados: Desarrollo, Pruebas (Staging) y Producción. | Alta |
+| RD-06 | Estándares de Código | El equipo debe adherirse a las guías de estilo de código oficiales de Dart ("Effective Dart") y una guía definida para JavaScript (ej. Airbnb). | Media |
+| RD-07 | Pruebas Unitarias | Los componentes críticos del backend (lógica de negocio, controladores de API) deben tener una cobertura de pruebas unitarias no inferior al 80%. | Alta |
 
-## 3.5 Requisitos de Calidad
+### 3.5 Requisitos de Calidad
 
-| ID  | Nombre | Especificación                                                                                                                | Prioridad |
-| --- | --- |-------------------------------------------------------------------------------------------------------------------------------| --- |
-| RC-01 | Rendimiento de Búsqueda | El tiempo de respuesta para una búsqueda de reparadores no debe exceder los 5 segundos en carga máxima.                                       | Alta |
-| RC-02 | Seguridad de Credenciales | Las contraseñas deben almacenarse en la base de datos utilizando un hash seguro (ej. bcrypt).                                 | Alta |
-| RC-03 | Disponibilidad | El sistema deberá tener una disponibilidad del 99.5% del tiempo.                                                              | Alta |
-| RC-04 | Integridad de la Transacción | El sistema debe garantizar que ninguna operación (ej. registro de pago) quede en un estado intermedio en caso de fallo.       | Alta |
-| RC-05 | Tiempo de Carga de Página | El tiempo de carga inicial de las páginas principales no debe superar los 5 segundos en una conexión de banda ancha promedio. | Media |
+| ID | Nombre | Especificación | Prioridad |
+| :--- | :--- | :--- | :--- |
+| RC-01 | Rendimiento de Búsqueda | Bajo una carga de 200 usuarios concurrentes, el tiempo de respuesta promedio para una búsqueda de reparadores debe ser inferior a 2 segundos. | Alta |
+| RC-02 | Seguridad de Credenciales | Las contraseñas deben almacenarse en la base de datos utilizando un hash criptográfico fuerte con bcrypt. | Alta |
+| RC-03 | Disponibilidad | El sistema deberá tener una disponibilidad del 99.8% del tiempo, bajo carga pesada | Alta |
+| RC-04 | Tiempo de Carga de App | En una conexión de red móvil 4G promedio, el tiempo hasta que la pantalla principal es interactiva debe ser inferior a 5 segundos. | Media |
+| RC-05 | Rendimiento Bajo Carga | Bajo una carga máxima simulada de 1000 usuarios realizando solicitudes simultáneamente, la tasa de error del servidor no debe superar el 1%. | Alta |
+| RC-06 | Consistencia de Datos | Tras una actualización de perfil por parte de un Reparador, la nueva información debe verse reflejada en todas las búsquedas de los Clientes en menos de 1 minuto. | Media |
+| RC-07 | Consumo de Batería | Durante el uso activo del seguimiento por mapa en la aplicación, el consumo de batería del dispositivo no debe aumentar más de un 15% por hora. | Media |
