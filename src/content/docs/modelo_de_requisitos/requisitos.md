@@ -81,7 +81,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 | --- | --- | --- | --- |
 | RNF-01 | Interoperabilidad con IA | El sistema debe ser capaz de conectarse a un servicio externo de IA para el análisis y recomendación de servicios. | Alta |
 | RNF-02 | Interoperabilidad con Mapas | El sistema debe poder integrarse con un servicio de mapas externo para visualizar datos de geolocalización. | Alta |
-| RNF-03 | Compatibilidad de Navegadores | La aplicación web debe ser compatible con las dos últimas versiones estables de Google Chrome, Firefox y Safari. | Alta |
+| RNF-03 | Compatibilidad de Sistema | La aplicación web debe ser compatible con las tres últimas versiones de Android. | Alta |
 | RNF-04 | Cumplimiento Normativo | El tratamiento de datos personales debe cumplir con la Ley de Protección de Datos Personales del Perú (Ley N° 29733). | Alta |
 
 ## 3.3 Requisitos de Dominio
@@ -98,7 +98,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 | ID  | Nombre | Especificación                                                                                             | Prioridad |
 | --- | --- |------------------------------------------------------------------------------------------------------------| --- |
 | RD-01 | Metodología | El proyecto se gestionará utilizando la metodología Sashimi.                       | Alta |
-| RD-02 | Stack Tecnológico | El sistema se desarrollará con JavaScript (Node.js, React, Express), MySQL y Redis.                        | Alta |
+| RD-02 | Stack Tecnológico | El sistema se desarrollará con Dart (Flutter) para la aplicación móvil, JavaScript (Node.js, Express) para el backend, y MySQL y Redis como bases de datos.                        | Alta |
 | RD-03 | Control de Versiones | Todo el código fuente del proyecto se gestionará utilizando Git en un repositorio centralizado (ej. GitHub). | Alta |
 | RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y una API de mapas (ej. Google Maps) para geolocalización.           | Alta |
 
@@ -106,7 +106,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 
 | ID  | Nombre | Especificación                                                                                                                | Prioridad |
 | --- | --- |-------------------------------------------------------------------------------------------------------------------------------| --- |
-| RC-01 | Rendimiento de Búsqueda | El tiempo de respuesta para una búsqueda de reparadores no debe exceder los 5 segundos.                                       | Alta |
+| RC-01 | Rendimiento de Búsqueda | El tiempo de respuesta para una búsqueda de reparadores no debe exceder los 5 segundos en carga máxima.                                       | Alta |
 | RC-02 | Seguridad de Credenciales | Las contraseñas deben almacenarse en la base de datos utilizando un hash seguro (ej. bcrypt).                                 | Alta |
 | RC-03 | Disponibilidad | El sistema deberá tener una disponibilidad del 99.5% del tiempo.                                                              | Alta |
 | RC-04 | Integridad de la Transacción | El sistema debe garantizar que ninguna operación (ej. registro de pago) quede en un estado intermedio en caso de fallo.       | Alta |
