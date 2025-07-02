@@ -5,13 +5,11 @@ description: Descripción detallada del modelo de requisitos del módulo de IA p
 
 ## 3. Requisitos específicos
 
-### 3.1. Requisitos comunes de los interfaces
-
-### 3.2. Requisitos funcionales
+### 3.1. Requisitos funcionales
 
 A continuación, se especifican los requisitos funcionales, derivados de los Casos de Uso del Sistema.
 
-#### 3.2.1 PROCESO DE NEGOCIO: GESTIONAR CONTRATACIÓN DE SERVICIO
+#### 3.1.1 PROCESO DE NEGOCIO: GESTIONAR CONTRATACIÓN DE SERVICIO
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -33,7 +31,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 - **Objetos del proceso:** Solicitud de Servicio, Cliente, Reparador, Especialidad, Calificación, Sanción, Contrato, Pago, Notificación.
 - **Asociaciones entre los objetos:** Cliente-crea-Solicitud, Reparador-es asignado a-Solicitud, Solicitud-genera-Contrato, Contrato-registra-Pago, Contrato-genera-Calificación, Contrato-puede generar-Sanción.
 
-#### 3.2.2 PROCESO DE NEGOCIO: GESTIONAR CUENTA DE USUARIO
+#### 3.1.2 PROCESO DE NEGOCIO: GESTIONAR CUENTA DE USUARIO
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -50,7 +48,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 - **Objetos del proceso:** Usuario, Cliente, Reparador, Especialidad, Certificado, Estado de Usuario.
 - **Asociaciones entre los objetos:** Cliente-es un-Usuario, Reparador-es un-Usuario, Reparador-posee-Especialidad, Reparador-gestiona-Certificado, Usuario-tiene un-Estado de Usuario.
 
-#### 3.2.3 PROCESO DE NEGOCIO: CONSULTAR HISTORIAL DE ACTIVIDAD
+#### 3.1.3 PROCESO DE NEGOCIO: CONSULTAR HISTORIAL DE ACTIVIDAD
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -63,7 +61,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 - **Objetos del proceso:** Usuario, Solicitud de Servicio (como registro histórico), Calificación.
 - **Asociaciones entre los objetos:** Usuario-participó en-Solicitud de Servicio, Solicitud de Servicio-tiene-Calificación.
 
-#### 3.2.4 PROCESO DE NEGOCIO: GESTIONAR RECLAMOS Y SANCIONES
+#### 3.1.4 PROCESO DE NEGOCIO: GESTIONAR RECLAMOS Y SANCIONES
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -77,7 +75,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 - **Objetos del proceso:** Reclamo, Solicitud de Servicio, Usuario, Sanción, Estado de Usuario.
 - **Asociaciones entre los objetos:** Reclamo-se asocia a-Solicitud, Reclamo-es iniciado por-Usuario, Reclamo-puede generar-Sanción.
 
-## 3.3. Requisitos No Funcionales
+## 3.2. Requisitos No Funcionales
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -86,7 +84,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 | RNF-03 | Compatibilidad de Navegadores | La aplicación web debe ser compatible con las dos últimas versiones estables de Google Chrome, Firefox y Safari. | Alta |
 | RNF-04 | Cumplimiento Normativo | El tratamiento de datos personales debe cumplir con la Ley de Protección de Datos Personales del Perú (Ley N° 29733). | Alta |
 
-## 3.4 Requisitos de Dominio
+## 3.3 Requisitos de Dominio
 
 | ID  | Nombre | Especificación | Prioridad |
 | --- | --- | --- | --- |
@@ -95,7 +93,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 | DD-03 | Política de Sanciones | Las sanciones por cancelación son acumulativas: 1ª vez=Advertencia, 2ª=Suspensión, 3ª=Inhabilitación. | Alta |
 | DD-04 | Exclusividad de Rol | Un usuario no puede ser Cliente y Reparador simultáneamente con la misma cuenta. | Alta |
 
-## 3.5 Requisitos de Desarrollo
+## 3.4 Requisitos de Desarrollo
 
 | ID  | Nombre | Especificación                                                                                             | Prioridad |
 | --- | --- |------------------------------------------------------------------------------------------------------------| --- |
@@ -104,7 +102,7 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 | RD-03 | Control de Versiones | Todo el código fuente del proyecto se gestionará utilizando Git en un repositorio centralizado (ej. GitHub). | Alta |
 | RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y una API de mapas (ej. Google Maps) para geolocalización.           | Alta |
 
-## 3.6 Requisitos de Calidad
+## 3.5 Requisitos de Calidad
 
 | ID  | Nombre | Especificación                                                                                                                | Prioridad |
 | --- | --- |-------------------------------------------------------------------------------------------------------------------------------| --- |
