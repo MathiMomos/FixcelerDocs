@@ -81,7 +81,7 @@ Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien a
 
 ### **Diagrama de roles del caso de uso: Gestión de Solicitud de Servicio**
 
-
+![img_8.png](img_8.png)
 
 ### **Acciones necesarias para realizar el proceso de negocio**
 
@@ -103,7 +103,8 @@ Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien a
 
 ### **Diagrama de Actividad**
 
-*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+![img_6.png](img_6.png)
+![img_7.png](img_7.png)
 
 ### **Lista de actividades a automatizar**
 
@@ -176,12 +177,6 @@ Este CUN describe el flujo de trabajo del Asistente de Operaciones (AO), quien a
 - **Precondiciones:** La asignación está formalizada en los registros internos.
 - **Post Condiciones:** El Cliente y el Reparador han sido notificados telefónicamente de que la asignación es oficial y se han dado las instrucciones finales (recordatorio del contrato al reparador).
 - **Caso de uso del sistema:** `<Notificar Asignación>`
-
----
-
-### Modelo de caso de uso inicial para el proceso: Gestión del Servicio de Reparación
-
-### Modelo de objetos del negocio del proceso de objetos: Gestión del Servicio de Reparación
 
 ---
 
@@ -276,7 +271,8 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 
 ### **Diagrama de Actividad**
 
-*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
 
 ### **Lista de actividades a automatizar**
 
@@ -330,10 +326,6 @@ Si durante la ejecución del trabajo surge una queja grave por parte del Cliente
 - **Agente:** Reparador, Cliente, Asistente de Operaciones.
 - **Precondiciones:** El reparador ha finalizado su labor y recibido el pago.
 - **Post Condiciones:** El AO ha recibido la confirmación de ambas partes y ha actualizado el estado del servicio a "Completado" en sus registros.
-
-### Modelo de caso de uso inicial para el proceso: Gestión del Servicio de Reparación
-
-### Modelo de objetos del negocio del proceso de objetos: Gestión del Servicio de Reparación
 
 ---
 
@@ -416,7 +408,7 @@ En el paso 4, si el AO determina que el reparador no cumple con los requisitos m
 
 ### **Diagrama de Actividad**
 
-*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+![img_11.png](img_11.png)
 
 ### **Lista de actividades a automatizar**
 
@@ -461,10 +453,6 @@ En el paso 4, si el AO determina que el reparador no cumple con los requisitos m
 - **Precondiciones:** El reparador ha sido validado informalmente.
 - **Post Condiciones:** Los datos del reparador están registrados en la hoja de cálculo y su estado inicial es "Disponible".
 - **Caso de uso del sistema:** `<Crear Perfil de Reparador>`
-
-### Modelo de caso de uso inicial para el proceso: Gestión de Registro de Reparador
-
-### Modelo de objetos del negocio del proceso de objetos: Gestión de Registro de Reparador
 
 ---
 
@@ -547,7 +535,7 @@ Si el AO intenta llamar a la otra parte involucrada varias veces sin éxito, deb
 
 ### **Diagrama de Actividad**
 
-*[Placeholder para el diagrama de actividad BPM que será insertado por el equipo.]*
+![img_12.png](img_12.png)
 
 ### **Lista de actividades a automatizar**
 
@@ -607,9 +595,5 @@ Si el AO intenta llamar a la otra parte involucrada varias veces sin éxito, deb
 - **Precondiciones:** El AO ha tomado una decisión final.
 - **Post Condiciones:** La resolución ha sido registrada y comunicada a los involucrados.
 - **Caso de uso del sistema:** `<Gestionar Reclamo>`
-
-### Modelo de caso de uso inicial para el proceso: Gestión de Atención al Cliente
-
-### Modelo de objetos del negocio del proceso de objetos: Gestión de Atención al Cliente
 
 ---

@@ -89,6 +89,6 @@ El sistema será la herramienta principal para la Gerencia, Operaciones y, exter
 #### **10.2. Sistema:** 
 La implementación estará en su mayoría implementada en el entorno de JavaScript de NodeJs utilizando librerías como React, Express y Prisma. El motor de base de datos será MySql.
 #### **10.3. Herramientas de modelado:** 
-Bizagi Modeler y Excalidraw+.
+Bizagi Modeler, Mermaid y Excalidraw+.
 
 ---

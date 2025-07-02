@@ -97,19 +97,19 @@ A continuación, se especifican los requisitos funcionales, derivados de los Cas
 
 ## 3.5 Requisitos de Desarrollo
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| RD-01 | Metodología | El proyecto se gestionará utilizando la metodología Scrum, con sprints de 2 semanas. | Alta |
-| RD-02 | Stack Tecnológico | El sistema se desarrollará con JavaScript (Node.js, React, Express), MySQL y Redis. | Alta |
+| ID  | Nombre | Especificación                                                                                             | Prioridad |
+| --- | --- |------------------------------------------------------------------------------------------------------------| --- |
+| RD-01 | Metodología | El proyecto se gestionará utilizando la metodología Sashimi.                       | Alta |
+| RD-02 | Stack Tecnológico | El sistema se desarrollará con JavaScript (Node.js, React, Express), MySQL y Redis.                        | Alta |
 | RD-03 | Control de Versiones | Todo el código fuente del proyecto se gestionará utilizando Git en un repositorio centralizado (ej. GitHub). | Alta |
-| RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y una API de mapas (ej. Google Maps) para geolocalización. | Alta |
+| RD-04 | Herramientas Externas | Se utilizará la API de Gemini para IA y una API de mapas (ej. Google Maps) para geolocalización.           | Alta |
 
 ## 3.6 Requisitos de Calidad
 
-| ID  | Nombre | Especificación | Prioridad |
-| --- | --- | --- | --- |
-| RC-01 | Rendimiento de Búsqueda | El tiempo de respuesta para una búsqueda de reparadores no debe exceder los 3 segundos. | Alta |
-| RC-02 | Seguridad de Credenciales | Las contraseñas deben almacenarse en la base de datos utilizando un hash seguro (ej. bcrypt). | Alta |
-| RC-03 | Disponibilidad | El sistema deberá tener una disponibilidad del 99.5% del tiempo. | Alta |
-| RC-04 | Integridad de la Transacción | El sistema debe garantizar que ninguna operación (ej. registro de pago) quede en un estado intermedio en caso de fallo. | Alta |
-| RC-05 | Tiempo de Carga de Página | El tiempo de carga inicial de las páginas principales no debe superar los 2 segundos en una conexión de banda ancha promedio. | Media |
+| ID  | Nombre | Especificación                                                                                                                | Prioridad |
+| --- | --- |-------------------------------------------------------------------------------------------------------------------------------| --- |
+| RC-01 | Rendimiento de Búsqueda | El tiempo de respuesta para una búsqueda de reparadores no debe exceder los 5 segundos.                                       | Alta |
+| RC-02 | Seguridad de Credenciales | Las contraseñas deben almacenarse en la base de datos utilizando un hash seguro (ej. bcrypt).                                 | Alta |
+| RC-03 | Disponibilidad | El sistema deberá tener una disponibilidad del 99.5% del tiempo.                                                              | Alta |
+| RC-04 | Integridad de la Transacción | El sistema debe garantizar que ninguna operación (ej. registro de pago) quede en un estado intermedio en caso de fallo.       | Alta |
+| RC-05 | Tiempo de Carga de Página | El tiempo de carga inicial de las páginas principales no debe superar los 5 segundos en una conexión de banda ancha promedio. | Media |
