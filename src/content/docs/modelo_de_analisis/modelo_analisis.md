@@ -16,6 +16,9 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
 - **Consultas de historial:** Agrupa los CUS que permiten a los usuarios consultar su historial de servicios y otros datos relevantes en la plataforma.
 - **Componentes Externos:** Este paquete especial contendrá todos los componentes que no son desarrollados por el sistema directamente, sino que son consultados o integrados desde fuentes externas. Para Fixceler, estos componentes consultados incluirán servicios de mapas o geolocalización (para Consultar Ubicación en Mapa).
 
+El siguiente diagrama engloba todos los casos de uso del sistema Fixceler, estos serán modularizados en paquetes de análisis que se desarrollarán en el modelo de análisis. Cada paquete contendrá los casos de uso que corresponden a las funcionalidades agrupadas por procesos de negocio:
+![img_45.png](img_45.png)
+
 ### 2. Proceso del Negocio: Gestión de Cuentas de Usuario
 #### 2.1. Paquetes de Análisis para CUS
 - Paquete del proceso del negocio:
@@ -23,17 +26,17 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
 - Paquetes para los casos de uso análisis:
 ![img_2.png](img_2.png)
 #### 2.2. Clases de Análisis
-##### 2.2.1. Clases Entidad
+#### 2.2.1. Clases Entidad
 ![img_3.png](img_3.png)
-##### 2.2.2. Clases Interfaz
+#### 2.2.2. Clases Interfaz
 ![img_4.png](img_4.png)
-##### 2.2.3. Clases Control
+#### 2.2.3. Clases Control
 ![img_5.png](img_5.png)
 #### 2.3. Diagrama de Clases de Análisis
-##### 2.3.1. Caso de Uso: Registrar Usuario
-##### - **Realización de Caso de Uso Análisis:**
+#### 2.3.1. Caso de Uso: Registrar Usuario
+#### - **Realización de Caso de Uso Análisis:**
 ![img_6.png](img_6.png)
-##### - **Flujo de Interacción y Eventos**
+#### - **Flujo de Interacción y Eventos**
 - **Primer escenario: Flujo Normal:**
       1. El **[Actor: Usuario Nuevo]** accede a la opción de registro.
       2. El **[Sistema: IU_FormularioRegistro]** presenta la sección de datos generales.
@@ -53,10 +56,10 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
       - **9a.** Si cualquier dato (general o específico) es inválido, el **[Sistema: C_ControlRegistro]** rechaza la operación y devuelve un error específico a la **[Sistema: IU_FormularioRegistro]**.
       - **9b.** La **[Sistema: IU_FormularioRegistro]** muestra el mensaje de error al **[Actor: Usuario Nuevo]**, resaltando los campos que deben ser corregidos.
       - **9c.** El flujo regresa al paso correspondiente (**paso 3** para datos generales o **paso 6** para datos específicos) para que el usuario corrija la información.
-##### 2.3.2. Caso de Uso: Iniciar Sesión
-##### - **Realización de Caso de Uso Análisis:**
+#### 2.3.2. Caso de Uso: Iniciar Sesión
+#### - **Realización de Caso de Uso Análisis:**
 ![img_37.png](img_37.png)
-##### **Flujo de Interacción y Eventos**
+#### **Flujo de Interacción y Eventos**
 - **Primer escenario: Flujo Normal**
     1. **Participantes de este escenario:**
         - **Actor:** Usuario Registrado
@@ -80,10 +83,10 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
         - **6c.** La **[Sistema: IU_FormularioLogin]** muestra un mensaje de error al **[Actor: Usuario Registrado]** (Ej: "Las credenciales son inválidas. Por favor, inténtelo de nuevo.").
         - **6d.** El flujo regresa al **paso 3** del curso normal, permitiendo al usuario volver a ingresar sus credenciales.
 
-##### 2.3.3. Caso de Uso: Actualizar Información
-##### - **Realización de Caso de Uso Análisis:**
+#### 2.3.3. Caso de Uso: Actualizar Información
+#### - **Realización de Caso de Uso Análisis:**
 ![img_38.png](img_38.png)
-##### **Flujo de Interacción y Eventos**
+#### **Flujo de Interacción y Eventos**
 - **Primer escenario: Flujo Normal**
     1. **Participantes de este escenario:**
         - **Actor:** Usuario Registrado
@@ -114,17 +117,17 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
 - Paquetes para los casos de uso análisis:
 ![img_8.png](img_8.png)
 #### 3.2. Clases de Análisis
-##### 3.2.1. Clases Entidad
+#### 3.2.1. Clases Entidad
 ![img_9.png](img_9.png)
-##### 3.2.2. Clases Interfaz
+#### 3.2.2. Clases Interfaz
 ![img_10.png](img_10.png)
-##### 3.2.3. Clases Control
+#### 3.2.3. Clases Control
 ![img_11.png](img_11.png)
 #### 3.3. Diagrama de Clases de Análisis
-##### 3.3.1. Caso de Uso: Buscar Reparador (Tradicional)
-##### - **Realización de Caso de Uso Análisis**
+#### 3.3.1. Caso de Uso: Buscar Reparador (Tradicional)
+#### - **Realización de Caso de Uso Análisis**
 ![img_12.png](img_12.png)
-##### - **Flujo de Interacción y Eventos**
+#### - **Flujo de Interacción y Eventos**
 - **Primer escenario: Flujo Normal**
     1. El **[Actor: Cliente]** accede a la opción de búsqueda tradicional.
     2. El **[Sistema: IU_FormularioBusquedaTradicional]** presenta los filtros de búsqueda.
@@ -137,10 +140,10 @@ Estos paquetes corresponden directamente a las principales áreas funcionales qu
 - **Segundo escenario: Flujos Alternos**
     - **Escenario: No se encuentran resultados (Curso Alterno 2a)**
     - **Escenario: El Cliente Cancela (Curso Alterno 1a)**
-##### 3.3.2. Caso de Uso: Buscar Reparador con IA (Chatbot)
-##### - **Realización de Caso de Uso Análisis**
+#### 3.3.2. Caso de Uso: Buscar Reparador con IA (Chatbot)
+#### - **Realización de Caso de Uso Análisis**
 ![img_13.png](img_13.png)
-##### - **Flujo de Interacción y Eventos**
+#### - **Flujo de Interacción y Eventos**
 - **Primer escenario: Flujo Normal**
     1. El **[Actor: Cliente]** abre la ventana del **[Sistema: IU_Chatbot]**.
     2. El **[Actor: Cliente]** escribe su necesidad en lenguaje natural.

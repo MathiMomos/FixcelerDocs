@@ -24,30 +24,29 @@ A continuación, se especifican las funcionalidades principales del sistema.
 
 #### 3.1.2 PROCESO DE NEGOCIO: GESTIONAR CUENTA DE USUARIO
 
-| ID | Nombre | Especificación | Prioridad |
-| :--- | :--- | :--- | :--- |
+| ID    | Nombre | Especificación | Prioridad |
+|:------| :--- | :--- | :--- |
 | RF-09 | Registro de Nuevo Usuario | El sistema debe proveer un formulario para el registro de nuevos usuarios (Clientes o Reparadores). | Alta |
 | RF-10 | Autenticación de Usuario | El sistema debe permitir a un usuario iniciar sesión de forma segura utilizando su correo electrónico y contraseña. | Alta |
 | RF-11 | Gestión de Perfil Básico | El sistema debe permitir a un usuario modificar su información personal básica (nombres, teléfono, foto de perfil) a través de un formulario. | Alta |
 | RF-12 | Gestión de Disponibilidad | El sistema debe permitir al Reparador cambiar su estado de disponibilidad a través de un interruptor en su perfil. | Alta |
-| RF-13 | Recuperación de Contraseña | El sistema debe ofrecer una funcionalidad para que los usuarios puedan restablecer su contraseña de forma segura. | Alta |
-| RF-14 | Cierre de Sesión | El sistema debe permitir a un usuario terminar su sesión activa de forma segura. | Media |
+| RF-13 | Cierre de Sesión | El sistema debe permitir a un usuario terminar su sesión activa de forma segura. | Media |
 
 #### 3.1.3 PROCESO DE NEGOCIO: CONSULTAR HISTORIAL DE ACTIVIDAD
 
-| ID | Nombre | Especificación | Prioridad |
-| :--- | :--- | :--- | :--- |
-| RF-15 | Consulta de Historial de Servicios | El sistema debe mostrar a un usuario una lista cronológica de todos los servicios pasados en los que ha participado. | Alta |
-| RF-16 | Detalle de Servicio Pasado | El sistema debe permitir al usuario ver una pantalla con los detalles completos de un servicio de su historial. | Media |
-| RF-17 | Filtro de Historial | El sistema debe proveer controles en la interfaz para filtrar el historial de servicios por rango de fechas o por estado. | Baja |
+| ID    | Nombre | Especificación | Prioridad |
+|:------| :--- | :--- | :--- |
+| RF-14 | Consulta de Historial de Servicios | El sistema debe mostrar a un usuario una lista cronológica de todos los servicios pasados en los que ha participado. | Alta |
+| RF-15 | Detalle de Servicio Pasado | El sistema debe permitir al usuario ver una pantalla con los detalles completos de un servicio de su historial. | Media |
+| RF-16 | Filtro de Historial | El sistema debe proveer controles en la interfaz para filtrar el historial de servicios por rango de fechas o por estado. | Baja |
 
 #### 3.1.4 PROCESO DE NEGOCIO: GESTIONAR RECLAMOS Y SANCIONES
 
-| ID | Nombre | Especificación | Prioridad |
-| :--- | :--- | :--- | :--- |
-| RF-18 | Registrar Reclamo o Queja | El sistema debe ofrecer un formulario para que un usuario inicie un reclamo sobre un servicio. | Alta |
-| RF-19 | Notificación de Resolución | El sistema debe notificar a ambas partes sobre el resultado de un reclamo. | Alta |
-| RF-20 | Visualización de Estado de Cuenta | El sistema debe mostrar al usuario su estado de cuenta actual (Habilitado, Suspendido, etc.) y su historial de sanciones. | Media |
+| ID    | Nombre | Especificación | Prioridad |
+|:------| :--- | :--- | :--- |
+| RF-17 | Registrar Reclamo o Queja | El sistema debe ofrecer un formulario para que un usuario inicie un reclamo sobre un servicio. | Alta |
+| RF-18 | Notificación de Resolución | El sistema debe notificar a ambas partes sobre el resultado de un reclamo. | Alta |
+| RF-19 | Visualización de Estado de Cuenta | El sistema debe mostrar al usuario su estado de cuenta actual (Habilitado, Suspendido, etc.) y su historial de sanciones. | Media |
 
 ### 3.2. Requisitos No Funcionales
 
@@ -77,7 +76,6 @@ A continuación, se especifican las funcionalidades principales del sistema.
 | DD-09 | Confirmación Mutua de Finalización | El sistema requiere que ambas partes (Cliente y Reparador) confirmen que un servicio ha finalizado para que este se marque como "Completado". | Alta |
 | DD-10 | Confirmación Mutua de Pago | El estado de un servicio se considera "Pagado y Cobrado" solo cuando el Cliente lo marca como "Pagado" y el Reparador lo marca como "Cobrado". | Alta |
 | DD-11 | Gestión de Perfil de Reparador | Solo los usuarios con el rol de "Reparador" pueden añadir, editar o eliminar sus especialidades y certificaciones. | Alta |
-| DD-12 | Procesamiento de Reclamos | El sistema debe analizar un reclamo basado en reglas de negocio predefinidas para aplicar una resolución automática (ej. registrar advertencia). | Alta |
 
 ### 3.4 Requisitos de Desarrollo
 
